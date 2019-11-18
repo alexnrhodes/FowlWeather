@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct WeatherDay: Codable {
+struct CurrentWeather: Codable {
     let cityName: String
     let weather: [String]
     let temp: Double

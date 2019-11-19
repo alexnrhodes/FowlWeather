@@ -13,11 +13,12 @@
 		322939FA23830ADD005B83F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 322939F823830ADD005B83F4 /* Main.storyboard */; };
 		322939FC23830AE1005B83F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 322939FB23830AE1005B83F4 /* Assets.xcassets */; };
 		322939FF23830AE1005B83F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 322939FD23830AE1005B83F4 /* LaunchScreen.storyboard */; };
-		32293A0A23830B5C005B83F4 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32293A0923830B5C005B83F4 /* Weather.swift */; };
+		32293A0A23830B5C005B83F4 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32293A0923830B5C005B83F4 /* CurrentWeather.swift */; };
 		32293A0C23830B69005B83F4 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32293A0B23830B69005B83F4 /* Joke.swift */; };
 		32293A0F23830B80005B83F4 /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32293A0E23830B80005B83F4 /* WeatherController.swift */; };
 		32293A1123830B8C005B83F4 /* JokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32293A1023830B8C005B83F4 /* JokeController.swift */; };
 		32293A1423830BAA005B83F4 /* AlexsCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32293A1323830BAA005B83F4 /* AlexsCustomView.swift */; };
+		38C869912383AD2D004428EA /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C869902383AD2D004428EA /* WeatherCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +30,12 @@
 		322939FB23830AE1005B83F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		322939FE23830AE1005B83F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32293A0023830AE1005B83F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		32293A0923830B5C005B83F4 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		32293A0923830B5C005B83F4 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		32293A0B23830B69005B83F4 /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 		32293A0E23830B80005B83F4 /* WeatherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherController.swift; sourceTree = "<group>"; };
 		32293A1023830B8C005B83F4 /* JokeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeController.swift; sourceTree = "<group>"; };
 		32293A1323830BAA005B83F4 /* AlexsCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlexsCustomView.swift; sourceTree = "<group>"; };
+		38C869902383AD2D004428EA /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +109,7 @@
 		32293A0D23830B6D005B83F4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				32293A0923830B5C005B83F4 /* Weather.swift */,
+				32293A0923830B5C005B83F4 /* CurrentWeather.swift */,
 				32293A0B23830B69005B83F4 /* Joke.swift */,
 			);
 			path = Models;
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				32293A1323830BAA005B83F4 /* AlexsCustomView.swift */,
+				38C869902383AD2D004428EA /* WeatherCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,7 +204,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32293A0A23830B5C005B83F4 /* Weather.swift in Sources */,
+				38C869912383AD2D004428EA /* WeatherCollectionViewCell.swift in Sources */,
+				32293A0A23830B5C005B83F4 /* CurrentWeather.swift in Sources */,
 				32293A0C23830B69005B83F4 /* Joke.swift in Sources */,
 				32293A0F23830B80005B83F4 /* WeatherController.swift in Sources */,
 				32293A1423830BAA005B83F4 /* AlexsCustomView.swift in Sources */,

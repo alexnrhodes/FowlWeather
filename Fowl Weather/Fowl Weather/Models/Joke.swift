@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct Joke: Codable {
+    let joke: String
+}

@@ -27,6 +27,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func searchButtonTapped(_ sender: UIButton) {
+        // Framework for modal search bar presentation
+    }
+    
 }
 

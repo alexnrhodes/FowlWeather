@@ -11,6 +11,8 @@ import ScalingCarousel
 import SHSearchBar
 
 class ViewController: UIViewController {
+    
+    // MARK: - IBOutlets & Properties\
 
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var dadJokeLabel: UILabel!
@@ -25,22 +27,74 @@ class ViewController: UIViewController {
     @IBOutlet weak var sunsetLabel: UILabel!
     @IBOutlet weak var carouselCollectionView: UICollectionView!
     
+    // Controller Properties
+    let weatherController = WeatherController()
+    let jokeController = JokeController()
+    
+    // Object Properites
+    var currentWeather: CurrentWeather?
+    var fiveDayForecast: [ForcastedWeatherDay]?
+    var joke: Joke?
+    var searchTerm: String?
+    
+    // MARK: - View LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         carouselCollectionView.dataSource = self
         carouselCollectionView.delegate = self
     }
+    
+    // MARK: - IBActions & Methods
 
     @IBAction func searchButtonTapped(_ sender: UIButton) {
         // Framework for modal search bar presentation
+        performFetches()
+    }
+    
+    private func performFetches() {
+        var errorCurrentWeather: Error?
+        var errorFiveDay: Error?
+        var errorJoke: Error?
+        guard let searchTerm = searchTerm else { return }
+        
+        weatherController.fetchWeatherByZipCode(zipCode: searchTerm) { (_, error) in
+            if let error = error {
+                errorCurrentWeather = error
+                return
+            }
+        }
+        
+        weatherController.fetchFiveDayByZipCode(zipCode: searchTerm) { (_, error) in
+            if let error = error {
+                errorFiveDay = error
+                return
+            }
+        }
+        
+        jokeController.fetchRandomJoke { (_, error) in
+            if let error = error {
+                errorJoke = error
+                return
+            }
+        }
+        
+        Group.dispatchGroup.notify(queue: .main) {
+            self.currentWeather = self.weatherController.currentWeather
+            self.fiveDayForecast = self.weatherController.fiveDayForcast
+            self.joke = self.jokeController.joke
+            //self.updateViews()
+        }
     }
     
 }
 
+// MARK: - Extensions
+
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return weatherController.fiveDayForcast!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

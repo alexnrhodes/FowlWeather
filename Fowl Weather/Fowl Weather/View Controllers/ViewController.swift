@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ScalingCarousel
+import SHSearchBar
 
 class ViewController: UIViewController {
 

@@ -240,6 +240,7 @@
                                                 <state key="normal" image="icons8-search-50"/>
                                                 <connections>
                                                     <action selector="searchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r5i-qO-JYo"/>
+                                                    <segue destination="K1d-eg-PzV" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="5lV-QQ-rcr"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -305,6 +306,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="113.04347826086958" y="137.94642857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nMf-eb-bDS">
+            <objects>
+                <viewController id="K1d-eg-PzV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UIS-je-qSI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBy-Z7-Xcs">
+                                <rect key="frame" x="57" y="119" width="300" height="50"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="ly6-ET-ItX">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="ly6-ET-ItX" firstAttribute="leading" secondItem="GBy-Z7-Xcs" secondAttribute="leading" id="447-cM-KaW"/>
+                                    <constraint firstAttribute="bottom" secondItem="ly6-ET-ItX" secondAttribute="bottom" id="DpH-aa-woh"/>
+                                    <constraint firstAttribute="trailing" secondItem="ly6-ET-ItX" secondAttribute="trailing" id="WNG-Xw-dff"/>
+                                    <constraint firstItem="ly6-ET-ItX" firstAttribute="top" secondItem="GBy-Z7-Xcs" secondAttribute="top" id="q9l-82-cY1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GBy-Z7-Xcs" firstAttribute="leading" secondItem="B8L-lN-C67" secondAttribute="leading" constant="57" id="b6i-0Y-Qab"/>
+                            <constraint firstItem="B8L-lN-C67" firstAttribute="trailing" secondItem="GBy-Z7-Xcs" secondAttribute="trailing" constant="57" id="fSg-mZ-OXf"/>
+                            <constraint firstItem="GBy-Z7-Xcs" firstAttribute="top" secondItem="B8L-lN-C67" secondAttribute="top" constant="75" id="ifi-so-nzs"/>
+                            <constraint firstItem="B8L-lN-C67" firstAttribute="bottom" secondItem="GBy-Z7-Xcs" secondAttribute="bottom" constant="693" id="qis-OF-aec"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="B8L-lN-C67"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PdC-ec-hff"/>
+                    <size key="freeformSize" width="414" height="896"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qUH-FF-QrD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="875" y="138"/>
         </scene>
     </scenes>
     <resources>

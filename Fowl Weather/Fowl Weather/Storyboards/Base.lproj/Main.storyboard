@@ -288,8 +288,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="carouselCollectionView" destination="REd-Az-nPY" id="EoV-FA-MmA"/>
                         <outlet property="categoryLabel" destination="65L-df-XXf" id="pdA-w8-dmJ"/>
                         <outlet property="cityLabel" destination="Dc4-hL-KxV" id="D6V-B9-3W4"/>
+                        <outlet property="dadJokeLabel" destination="P5m-ue-2Jz" id="PC9-Ew-PKe"/>
                         <outlet property="dayLabel" destination="hru-QC-BdN" id="drP-CR-cbg"/>
                         <outlet property="sunriseLabel" destination="lzx-os-I0l" id="q6z-vu-ISP"/>
                         <outlet property="sunsetLabel" destination="Jv9-Gq-0T3" id="fNg-Q9-IKJ"/>

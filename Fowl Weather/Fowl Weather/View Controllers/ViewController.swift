@@ -35,7 +35,13 @@ class ViewController: UIViewController {
     var currentWeather: CurrentWeather?
     var fiveDayForecast: [ForcastedWeatherDay]?
     var joke: Joke?
-    var searchTerm: String?
+    var searchTerm: String? {
+        didSet {
+            performFetches()
+        }
+    }
+    
+    
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM-dd-yy, h:mm a"
@@ -49,6 +55,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         carouselCollectionView.dataSource = self
         carouselCollectionView.delegate = self
+        observeSearchTerm()
     }
     
     private func updateViews() {
@@ -109,7 +116,12 @@ class ViewController: UIViewController {
     }
     
     private func observeSearchTerm() {
-        NotificationCenter.default.addObserver(self, selector: #selector(performFetches), name: .searchTermChosen, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveSearchTerm(_:)), name: .searchTermChosen, object: nil)
+    }
+    
+    @objc func didReceiveSearchTerm(_ notification: Notification) {
+        guard let searchTerm = notification.userInfo?.values.first as? String else { return }
+        self.searchTerm = searchTerm
     }
 }
 

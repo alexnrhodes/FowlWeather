@@ -12,17 +12,22 @@ class SearchBarViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchBarView: UIView!
-    
-    var searchTerm: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        searchBar.delegate = self
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let searchTerm = searchBar.text
+        NotificationCenter.default.post(name: .searchTermChosen, object: nil, userInfo: ["searchTerm": searchTerm!])
+               self.dismiss(animated: true, completion: nil)
     }
 
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         let searchTerm = searchBar.text
         
+        NotificationCenter.default.post(name: .searchTermChosen, object: nil, userInfo: ["searchTerm": searchTerm!])
+        self.dismiss(animated: true, completion: nil)
     }
 }

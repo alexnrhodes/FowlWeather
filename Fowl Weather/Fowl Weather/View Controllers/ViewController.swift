@@ -75,7 +75,7 @@ class ViewController: UIViewController {
         performFetches()
     }
     
-    private func performFetches() {
+    @objc private func performFetches() {
         
         guard let searchTerm = searchTerm else { return }
         
@@ -108,8 +108,9 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    
+    private func observeSearchTerm() {
+        NotificationCenter.default.addObserver(self, selector: #selector(performFetches), name: .searchTermChosen, object: nil)
+    }
 }
 
 // MARK: - Extensions

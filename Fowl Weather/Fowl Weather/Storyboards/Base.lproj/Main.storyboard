@@ -240,7 +240,7 @@
                                                 <state key="normal" image="icons8-search-50"/>
                                                 <connections>
                                                     <action selector="searchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r5i-qO-JYo"/>
-                                                    <segue destination="K1d-eg-PzV" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="5lV-QQ-rcr"/>
+                                                    <segue destination="K1d-eg-PzV" kind="presentation" identifier="SearchSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="5lV-QQ-rcr"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -307,10 +307,10 @@
             </objects>
             <point key="canvasLocation" x="113.04347826086958" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Bar View Controller-->
         <scene sceneID="nMf-eb-bDS">
             <objects>
-                <viewController id="K1d-eg-PzV" sceneMemberID="viewController">
+                <viewController id="K1d-eg-PzV" customClass="SearchBarViewController" customModule="Fowl_Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UIS-je-qSI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -343,10 +343,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="PdC-ec-hff"/>
                     <size key="freeformSize" width="414" height="896"/>
+                    <connections>
+                        <outlet property="searchBar" destination="ly6-ET-ItX" id="hh3-NV-n2I"/>
+                        <outlet property="searchBarView" destination="GBy-Z7-Xcs" id="tOF-6b-9UP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qUH-FF-QrD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="875" y="138"/>
+            <point key="canvasLocation" x="875" y="137"/>
         </scene>
     </scenes>
     <resources>

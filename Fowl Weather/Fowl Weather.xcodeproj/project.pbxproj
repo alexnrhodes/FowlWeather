@@ -21,6 +21,8 @@
 		38C869912383AD2D004428EA /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C869902383AD2D004428EA /* WeatherCollectionViewCell.swift */; };
 		38C869932384808A004428EA /* ForcastedWeatherDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C869922384808A004428EA /* ForcastedWeatherDay.swift */; };
 		38C86995238480CC004428EA /* DispatchGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C86994238480CC004428EA /* DispatchGroup.swift */; };
+		38C8699723849498004428EA /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C8699623849498004428EA /* SearchBarViewController.swift */; };
+		38C8699923849921004428EA /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C8699823849921004428EA /* Notification+Extension.swift */; };
 		B9535BFB47EB4E945B523333 /* Pods_Fowl_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7777F38B02227B1065740C5 /* Pods_Fowl_Weather.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		38C869902383AD2D004428EA /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		38C869922384808A004428EA /* ForcastedWeatherDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForcastedWeatherDay.swift; sourceTree = "<group>"; };
 		38C86994238480CC004428EA /* DispatchGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchGroup.swift; sourceTree = "<group>"; };
+		38C8699623849498004428EA /* SearchBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewController.swift; sourceTree = "<group>"; };
+		38C8699823849921004428EA /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
 		B7777F38B02227B1065740C5 /* Pods_Fowl_Weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fowl_Weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,6 +88,7 @@
 				32293A1523830BB2005B83F4 /* Views */,
 				32293A0823830B36005B83F4 /* View Controllers */,
 				32293A0723830B2E005B83F4 /* Storyboards */,
+				38C8699A2384993B004428EA /* Helpers */,
 				32293A0623830B04005B83F4 /* Resources */,
 			);
 			path = "Fowl Weather";
@@ -113,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				322939F623830ADD005B83F4 /* ViewController.swift */,
+				38C8699623849498004428EA /* SearchBarViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -130,7 +136,6 @@
 		32293A1223830B90005B83F4 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				38C86994238480CC004428EA /* DispatchGroup.swift */,
 				32293A0E23830B80005B83F4 /* WeatherController.swift */,
 				32293A1023830B8C005B83F4 /* JokeController.swift */,
 			);
@@ -144,6 +149,15 @@
 				38C869902383AD2D004428EA /* WeatherCollectionViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		38C8699A2384993B004428EA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				38C86994238480CC004428EA /* DispatchGroup.swift */,
+				38C8699823849921004428EA /* Notification+Extension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		67B6D86510F65DC75610FC1A /* Pods */ = {
@@ -280,12 +294,14 @@
 			files = (
 				38C869912383AD2D004428EA /* WeatherCollectionViewCell.swift in Sources */,
 				32293A0A23830B5C005B83F4 /* CurrentWeather.swift in Sources */,
+				38C8699723849498004428EA /* SearchBarViewController.swift in Sources */,
 				32293A0C23830B69005B83F4 /* Joke.swift in Sources */,
 				38C869932384808A004428EA /* ForcastedWeatherDay.swift in Sources */,
 				32293A0F23830B80005B83F4 /* WeatherController.swift in Sources */,
 				32293A1423830BAA005B83F4 /* AlexsCustomView.swift in Sources */,
 				322939F723830ADD005B83F4 /* ViewController.swift in Sources */,
 				322939F323830ADD005B83F4 /* AppDelegate.swift in Sources */,
+				38C8699923849921004428EA /* Notification+Extension.swift in Sources */,
 				32293A1123830B8C005B83F4 /* JokeController.swift in Sources */,
 				38C86995238480CC004428EA /* DispatchGroup.swift in Sources */,
 				322939F523830ADD005B83F4 /* SceneDelegate.swift in Sources */,

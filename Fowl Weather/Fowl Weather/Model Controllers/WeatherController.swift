@@ -29,7 +29,10 @@ class WeatherController {
         components.queryItems = [cityQueryItem, imperialQueryItem, apiKeyQueryItem]
         url = components.url!
         print("The url is \(url)")
+        
+        Group.dispatchGroup.enter()
         URLSession.shared.dataTask(with: url) { (data, _, error) in
+            
             if let error = error {
                 NSLog("Error fetching city by name:\(error)")
                 completion(nil, error)
@@ -49,6 +52,7 @@ class WeatherController {
             } catch {
                 NSLog("Unable to decode data into CurrentWeather object:\(error)")
             }
+            Group.dispatchGroup.leave()
         }.resume()
     }
     
@@ -65,6 +69,7 @@ class WeatherController {
         components.queryItems = [zipQueryItem, imperialQueryItem, apiKeyQueryItem]
         url = components.url!
         
+        Group.dispatchGroup.enter()
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 NSLog("Error fetching city by name:\(error)")
@@ -85,6 +90,7 @@ class WeatherController {
             } catch {
                 NSLog("Unable to decode data into CurrentWeather object:\(error)")
             }
+            Group.dispatchGroup.leave()
         }.resume()
     }
     
@@ -100,6 +106,8 @@ class WeatherController {
         components.queryItems = [cityQueryItem, imperialQueryItem, apiKeyQueryItem]
         url = components.url!
         print("The url is \(url)")
+        
+        Group.dispatchGroup.enter()
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 NSLog("Error fetching city by name:\(error)")
@@ -123,6 +131,7 @@ class WeatherController {
             } catch {
                 NSLog("Unable to decode data into CurrentWeather object:\(error)")
             }
+            Group.dispatchGroup.leave()
         }.resume()
     }
     
@@ -138,7 +147,10 @@ class WeatherController {
         components.queryItems = [cityQueryItem, imperialQueryItem, apiKeyQueryItem]
         url = components.url!
         print("The url is \(url)")
+        
+        Group.dispatchGroup.enter()
         URLSession.shared.dataTask(with: url) { (data, _, error) in
+            
             if let error = error {
                 NSLog("Error fetching city by name:\(error)")
                 completion(nil, error)
@@ -161,6 +173,7 @@ class WeatherController {
             } catch {
                 NSLog("Unable to decode data into CurrentWeather object:\(error)")
             }
+            Group.dispatchGroup.leave()
         }.resume()
     }
 }

@@ -10,6 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var dadJokeTextView: UITextView!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var tempHighLabel: UILabel!
+    @IBOutlet weak var tempLowLabel: UILabel!
+    @IBOutlet weak var windSpeedLabel: UILabel!
+    @IBOutlet weak var windDirectionLabel: UILabel!
+    @IBOutlet weak var sunriseLabel: UILabel!
+    @IBOutlet weak var sunsetLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

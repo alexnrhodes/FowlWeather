@@ -13,7 +13,7 @@ import SHSearchBar
 class ViewController: UIViewController {
     
     // MARK: - IBOutlets & Properties\
-
+    
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var dadJokeLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
@@ -36,6 +36,12 @@ class ViewController: UIViewController {
     var fiveDayForecast: [ForcastedWeatherDay]?
     var joke: Joke?
     var searchTerm: String?
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-yy, h:mm a"
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        return formatter
+    }
     
     // MARK: - View LifeCycle
     
@@ -45,36 +51,51 @@ class ViewController: UIViewController {
         carouselCollectionView.delegate = self
     }
     
+    private func updateViews() {
+        guard let joke = joke,
+            let currentWeather = currentWeather else {return}
+        
+        dadJokeLabel.text = joke.joke
+        cityLabel.text = currentWeather.cityName
+        categoryLabel.text = currentWeather.weather.first
+        tempLabel.text = "\(currentWeather.temp)°"
+        tempHighLabel.text =  "\(currentWeather.tempMax)°"
+        tempLowLabel.text = "\(currentWeather.tempMin)°"
+        windSpeedLabel.text = "Wind speed: \(currentWeather.windSpeed) MPH"
+        windDirectionLabel.text = "Wind Direction: \(currentWeather.windDirection)°"
+        let sunriseDate = Date(timeIntervalSince1970: currentWeather.sunrise)
+        sunriseLabel.text = dateFormatter.string(from: sunriseDate)
+        sunsetLabel.text = "\(currentWeather.sunset)"
+    }
+    
     // MARK: - IBActions & Methods
-
+    
     @IBAction func searchButtonTapped(_ sender: UIButton) {
         // Framework for modal search bar presentation
         performFetches()
     }
     
     private func performFetches() {
-        var errorCurrentWeather: Error?
-        var errorFiveDay: Error?
-        var errorJoke: Error?
+        
         guard let searchTerm = searchTerm else { return }
         
         weatherController.fetchWeatherByZipCode(zipCode: searchTerm) { (_, error) in
             if let error = error {
-                errorCurrentWeather = error
+                NSLog("Error fetching current weather: \(error)")
                 return
             }
         }
         
         weatherController.fetchFiveDayByZipCode(zipCode: searchTerm) { (_, error) in
             if let error = error {
-                errorFiveDay = error
+                NSLog("Error fetching current forecast: \(error)")
                 return
             }
         }
         
         jokeController.fetchRandomJoke { (_, error) in
             if let error = error {
-                errorJoke = error
+                NSLog("Error fetching joke: \(error)")
                 return
             }
         }
@@ -83,9 +104,11 @@ class ViewController: UIViewController {
             self.currentWeather = self.weatherController.currentWeather
             self.fiveDayForecast = self.weatherController.fiveDayForcast
             self.joke = self.jokeController.joke
-            //self.updateViews()
+            self.updateViews()
         }
     }
+    
+    
     
 }
 
@@ -94,7 +117,7 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return weatherController.fiveDayForcast!.count
+        return weatherController.fiveDayForcast?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -106,5 +129,5 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
         
     }
-   
+    
 }

@@ -16,8 +16,8 @@ struct CurrentWeather: Codable {
     let tempMax: Double
     let windSpeed: Double
     let windDirection: Int
-    let sunrise: Date
-    let sunset: Date
+    let sunrise: Double
+    let sunset: Double
     
     enum CodingKeys: String, CodingKey {
         case cityName = "name"
@@ -87,8 +87,8 @@ struct CurrentWeather: Codable {
         
         //Sunrise and Sunset
         let sunContainer = try container.nestedContainer(keyedBy: CodingKeys.SunKeys.self, forKey: .sunrise)
-        let sunrise = try sunContainer.decode(Date.self, forKey: .sunrise)
-        let sunset = try sunContainer.decode(Date.self, forKey: .sunset)
+        let sunrise = try sunContainer.decode(Double.self, forKey: .sunrise)
+        let sunset = try sunContainer.decode(Double.self, forKey: .sunset)
         self.sunrise = sunrise
         self.sunset = sunset
     }

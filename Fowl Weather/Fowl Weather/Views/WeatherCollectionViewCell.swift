@@ -24,9 +24,33 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
     
     private func updateViews() {
         
+        self.mainView.alpha = 0.1
+        
         guard let forcastedWeatherDay = forcastedWeatherDay else {return}
         
-        #warning("ImageViewLogic")
+        switch forcastedWeatherDay.weather.first {
+        case WeatherType.clear.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "day_clear")
+        case WeatherType.fewClouds.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+        case WeatherType.scatteredClouds.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+        case WeatherType.brokenClouds.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+        case WeatherType.shower.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "day_rain")
+        case WeatherType.rain.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "day_rain")
+        case WeatherType.storm.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "day_snow_thunder")
+        case WeatherType.snow.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "day_snow")
+        case WeatherType.mist.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "day_rain")
+        default:
+            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+        }
+        
         
         dayLabel.text = "\(forcastedWeatherDay.date)"
         tempHigh.text = "\(forcastedWeatherDay.tempMax)"

@@ -74,7 +74,7 @@ class ViewController: UIViewController {
     
     
     // MARK: - IBActions & Methods
-   
+    
     
     @objc private func performFetches() {
         
@@ -106,6 +106,7 @@ class ViewController: UIViewController {
             self.fiveDayForecast = self.weatherController.fiveDayForcast
             self.joke = self.jokeController.joke
             self.updateViews()
+            self.carouselCollectionView.reloadData()
         }
     }
     
@@ -116,7 +117,7 @@ class ViewController: UIViewController {
     @objc func didReceiveSearchTerm(_ notification: Notification) {
         guard let searchTerm = notification.userInfo?.values.first as? String else { return }
         self.searchTerm = searchTerm
-//        performFetches()
+        //        performFetches()
     }
     
     private func updateViews() {
@@ -169,9 +170,7 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard let currentCenterIndex = carouselCollectionView.currentCenterCellIndex?.row else { return }
-        print(currentCenterIndex)
-        carouselCollectionView.didScroll()
+                carouselCollectionView.didScroll()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -182,12 +181,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCell", for: indexPath) as? WeatherCollectionViewCell else {return UICollectionViewCell()}
         
         cell.forcastedWeatherDay = fiveDayForecast?[indexPath.row]
+        
         DispatchQueue.main.async {
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
-            print(cell.frame)
-            cell.layer.cornerRadius = 10
-            cell.backgroundColor = UIColor(red: 237/270, green: 237/270, blue: 244/270, alpha: 0.2)
         }
         
         
@@ -195,10 +192,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        carouselCollectionView.deviceRotated()
-    }
+//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//        super.viewWillTransition(to: size, with: coordinator)
+//        carouselCollectionView.deviceRotated()
+//    }
 }
 
 private typealias ScalingCarouselFlowDelegate = ViewController

@@ -43,6 +43,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="175"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3Z-3O-KPs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="175"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="2Us-IR-9do">
                                                     <rect key="frame" x="30" y="10" width="90" height="155"/>
                                                     <subviews>
@@ -56,6 +60,8 @@
                                                             <rect key="frame" x="0.0" y="29" width="90" height="90"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="TlD-md-wde" secondAttribute="height" multiplier="1:1" id="5ne-eR-rox"/>
+                                                                <constraint firstAttribute="height" constant="90" id="HIb-6X-CRY"/>
+                                                                <constraint firstAttribute="width" constant="90" id="SFn-WS-y0v"/>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WEj-YT-fs0">
@@ -111,8 +117,13 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="y3Z-3O-KPs" secondAttribute="bottom" id="0Ps-cc-4n6"/>
                                                 <constraint firstItem="2Us-IR-9do" firstAttribute="centerY" secondItem="yzr-a3-LBS" secondAttribute="centerY" id="7Lq-qs-nUk"/>
+                                                <constraint firstAttribute="trailing" secondItem="y3Z-3O-KPs" secondAttribute="trailing" id="Fr9-Rc-N2X"/>
+                                                <constraint firstItem="y3Z-3O-KPs" firstAttribute="leading" secondItem="yzr-a3-LBS" secondAttribute="leading" id="LhZ-HW-qiB"/>
+                                                <constraint firstItem="y3Z-3O-KPs" firstAttribute="top" secondItem="yzr-a3-LBS" secondAttribute="top" id="nrg-2T-ajA"/>
                                                 <constraint firstItem="2Us-IR-9do" firstAttribute="centerX" secondItem="yzr-a3-LBS" secondAttribute="centerX" id="uEk-Ec-QZ9"/>
                                             </constraints>
                                         </collectionViewCellContentView>
@@ -120,6 +131,7 @@
                                         <connections>
                                             <outlet property="dayLabel" destination="aOb-gm-Zn8" id="9sF-gh-Fis"/>
                                             <outlet property="iconImageView" destination="TlD-md-wde" id="XFR-8k-jTq"/>
+                                            <outlet property="mainView" destination="y3Z-3O-KPs" id="M8t-g5-thP"/>
                                             <outlet property="tempHigh" destination="zns-U9-nlr" id="4M0-kj-PMc"/>
                                             <outlet property="tempLow" destination="cWo-7A-sGL" id="kiN-xJ-wVI"/>
                                         </connections>

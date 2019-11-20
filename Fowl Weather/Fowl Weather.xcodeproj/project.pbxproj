@@ -23,6 +23,7 @@
 		38C86995238480CC004428EA /* DispatchGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C86994238480CC004428EA /* DispatchGroup.swift */; };
 		38C8699723849498004428EA /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C8699623849498004428EA /* SearchBarViewController.swift */; };
 		38C8699923849921004428EA /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C8699823849921004428EA /* Notification+Extension.swift */; };
+		38C8699C238583D5004428EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38C8699B238583D5004428EA /* Assets.xcassets */; };
 		B9535BFB47EB4E945B523333 /* Pods_Fowl_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7777F38B02227B1065740C5 /* Pods_Fowl_Weather.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		38C86994238480CC004428EA /* DispatchGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchGroup.swift; sourceTree = "<group>"; };
 		38C8699623849498004428EA /* SearchBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewController.swift; sourceTree = "<group>"; };
 		38C8699823849921004428EA /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
+		38C8699B238583D5004428EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../../../Desktop/Assets.xcassets; sourceTree = "<group>"; };
 		B7777F38B02227B1065740C5 /* Pods_Fowl_Weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fowl_Weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -97,6 +99,7 @@
 		32293A0623830B04005B83F4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				38C8699B238583D5004428EA /* Assets.xcassets */,
 				322939F223830ADD005B83F4 /* AppDelegate.swift */,
 				322939F423830ADD005B83F4 /* SceneDelegate.swift */,
 				322939FB23830AE1005B83F4 /* Assets.xcassets */,
@@ -239,6 +242,7 @@
 			files = (
 				322939FF23830AE1005B83F4 /* LaunchScreen.storyboard in Resources */,
 				322939FC23830AE1005B83F4 /* Assets.xcassets in Resources */,
+				38C8699C238583D5004428EA /* Assets.xcassets in Resources */,
 				322939FA23830ADD005B83F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,7 +461,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jakeconnerly.Fowl-Weather";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexandrarhodes.Fowl-Weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -477,7 +481,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jakeconnerly.Fowl-Weather";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexandrarhodes.Fowl-Weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -25,7 +25,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var windDirectionLabel: UILabel!
     @IBOutlet weak var sunriseLabel: UILabel!
     @IBOutlet weak var sunsetLabel: UILabel!
-    @IBOutlet weak var carouselCollectionView: UICollectionView!
+    @IBOutlet weak var carouselCollectionView: ScalingCarouselView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     // Controller Properties
     let weatherController = WeatherController()
@@ -58,22 +59,7 @@ class ViewController: UIViewController {
         observeSearchTerm()
     }
     
-    private func updateViews() {
-        guard let joke = joke,
-            let currentWeather = currentWeather else {return}
-        
-        dadJokeLabel.text = joke.joke
-        cityLabel.text = currentWeather.cityName
-        categoryLabel.text = currentWeather.weather.first
-        tempLabel.text = "\(currentWeather.temp)°"
-        tempHighLabel.text =  "\(currentWeather.tempMax)°"
-        tempLowLabel.text = "\(currentWeather.tempMin)°"
-        windSpeedLabel.text = "Wind speed: \(currentWeather.windSpeed) MPH"
-        windDirectionLabel.text = "Wind Direction: \(currentWeather.windDirection)°"
-        let sunriseDate = Date(timeIntervalSince1970: currentWeather.sunrise)
-        sunriseLabel.text = dateFormatter.string(from: sunriseDate)
-        sunsetLabel.text = "\(currentWeather.sunset)"
-    }
+    
     
     // MARK: - IBActions & Methods
     
@@ -123,24 +109,67 @@ class ViewController: UIViewController {
         guard let searchTerm = notification.userInfo?.values.first as? String else { return }
         self.searchTerm = searchTerm
     }
+    
+    private func updateViews() {
+        guard let joke = joke,
+            let currentWeather = currentWeather else {return}
+        
+        dadJokeLabel.text = joke.joke
+        cityLabel.text = currentWeather.cityName
+        categoryLabel.text = currentWeather.weather.first
+        tempLabel.text = "\(currentWeather.temp)°"
+        tempHighLabel.text =  "\(currentWeather.tempMax)°"
+        tempLowLabel.text = "\(currentWeather.tempMin)°"
+        windSpeedLabel.text = "Wind speed: \(currentWeather.windSpeed) MPH"
+        windDirectionLabel.text = "Wind Direction: \(currentWeather.windDirection)°"
+        let sunriseDate = Date(timeIntervalSince1970: currentWeather.sunrise)
+        sunriseLabel.text = dateFormatter.string(from: sunriseDate)
+        sunsetLabel.text = "\(currentWeather.sunset)"
+    }
+    
+    private func setBackground() {
+        guard let currentWeather = currentWeather else {return}
+        
+        switch currentWeather.weather.first {
+        case "cloudy":
+            backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
+        default:
+            break
+        }
+    }
 }
 
 // MARK: - Extensions
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        carouselCollectionView.didScroll()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return weatherController.fiveDayForcast?.count ?? 0
+        return weatherController.fiveDayForcast?.count ?? 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCell", for: indexPath) as? WeatherCollectionViewCell else {return UICollectionViewCell()}
         
-        cell.layer.cornerRadius = 10
-        cell.backgroundColor = UIColor(red: 255/255.0, green: 204/255.0, blue: 0/255.0, alpha: 0.35)
+        cell.forcastedWeatherDay = fiveDayForecast?[indexPath.row]
+        DispatchQueue.main.async {
+            cell.setNeedsLayout()
+            cell.layoutIfNeeded()
+            print(cell.frame)
+            cell.layer.cornerRadius = 10
+            cell.backgroundColor = UIColor(red: 237/270, green: 237/270, blue: 244/270, alpha: 0.2)
+        }
+        
         
         return cell
         
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        carouselCollectionView.deviceRotated()
+    }
 }

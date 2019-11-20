@@ -103,8 +103,7 @@ class ViewController: UIViewController {
         } else if searchByZip != nil {
             performFetchByZip(searchTerm: searchTerm)
         } else if searchByZip == nil && searchTermChecker != nil {
-            //TODO: Pop alert Invalid Entry
-            print("invalid Entry")
+            popAlertControllerWithMessage(message: "\(searchTerm) is an invalid entry. Please try again.", title: "Invalid Search Entry")
         } else {
             //TODO: Pop alert Invalid entry
         }
@@ -118,6 +117,10 @@ class ViewController: UIViewController {
         
         Group.dispatchGroup.notify(queue: .main) {
             self.currentWeather = self.weatherController.currentWeather
+            if self.currentWeather == nil {
+                self.popAlertControllerWithMessage(message: "\(searchTerm) is an invalid entry. Please try again.", title: "Invalid Search Entry")
+                return
+            }
             self.fiveDayForecast = self.weatherController.fiveDayForcast
             self.joke = self.jokeController.joke
             self.updateViews()
@@ -126,7 +129,7 @@ class ViewController: UIViewController {
     }
     
     private func performFetchByZip(searchTerm: String) {
-        weatherController.fetchWeatherByZipCode(zipCode: searchTerm) { (_, error) in
+        weatherController.fetchWeatherByZipCode(zipCode: searchTerm) { (weather, error) in
             if let error = error {
                 NSLog("Error fetching current weather: \(error)")
                 return
@@ -253,6 +256,12 @@ class ViewController: UIViewController {
             cardinalDirection = ""
         }
         return cardinalDirection
+    }
+    
+    private func popAlertControllerWithMessage(message: String, title: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

@@ -191,11 +191,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
         
     }
-    
-//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-//        super.viewWillTransition(to: size, with: coordinator)
-//        carouselCollectionView.deviceRotated()
-//    }
 }
 
 private typealias ScalingCarouselFlowDelegate = ViewController

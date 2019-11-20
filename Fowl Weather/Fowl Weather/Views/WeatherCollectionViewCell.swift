@@ -17,6 +17,13 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
         }
     }
     
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE"
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        return formatter
+    }
+    
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var tempHigh: UILabel!
@@ -51,10 +58,10 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
             iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
         }
         
-        
-        dayLabel.text = "\(forcastedWeatherDay.date)"
-        tempHigh.text = "\(forcastedWeatherDay.tempMax)"
-        tempLow.text = "\(forcastedWeatherDay.tempMin)"
+        let date = Date(timeIntervalSince1970: forcastedWeatherDay.date)
+        dayLabel.text = dateFormatter.string(from: date)
+        tempHigh.text = String(format: "%.0f", forcastedWeatherDay.tempMax)
+        tempLow.text = String(format: "%.0f", forcastedWeatherDay.tempMin)
         
         
     }

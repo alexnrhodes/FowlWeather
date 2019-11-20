@@ -20,7 +20,7 @@ struct ForcastedWeatherDay: Codable {
     let temp: Double
     let tempMin: Double
     let tempMax: Double
-    let date: Date
+    let date: Double
 
     enum CodingKeys: String, CodingKey {
         case weather
@@ -45,7 +45,7 @@ struct ForcastedWeatherDay: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         // Top Level
-        let date = try container.decode(Date.self, forKey: .date)
+        let date = try container.decode(Double.self, forKey: .date)
         self.date = date
 
         // Weather Descriptions
@@ -66,5 +66,13 @@ struct ForcastedWeatherDay: Codable {
         self.temp = temp
         self.tempMin = tempMin
         self.tempMax = tempMax
+    }
+    
+    init(weather: [String], temp: Double, tempMin: Double, tempMax: Double, date: Double) {
+        self.weather = weather
+        self.temp = temp
+        self.tempMin = tempMin
+        self.tempMax = tempMax
+        self.date = date
     }
 }

@@ -12,14 +12,40 @@ class SearchBarViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchBarView: UIView!
-
+    @IBOutlet weak var blurView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
         searchBar.delegate = self
     }
     
-    #warning("set responders")
+    private func updateViews() {
+       
+        
+//        NSLayoutConstraint(item: blurView!, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 1).isActive = true
+        
+        searchBar.placeholder = "Search by ZIP"
+        searchBar.layer.cornerRadius = 10
+        searchBarView.layer.cornerRadius = 10
+       
+        if !UIAccessibility.isReduceTransparencyEnabled {
+            blurView.backgroundColor = .clear
+
+            let blurEffect = UIBlurEffect(style: .dark)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            //always fill the view
+            blurEffectView.frame = self.view.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+            blurView.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+        } else {
+            view.backgroundColor = .black
+        }
+        
+    }
     
+ 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let searchTerm = searchBar.text
         NotificationCenter.default.post(name: .searchTermChosen, object: nil, userInfo: ["searchTerm": searchTerm!])

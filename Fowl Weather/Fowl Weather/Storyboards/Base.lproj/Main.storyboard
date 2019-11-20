@@ -239,12 +239,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="On0-Vp-4GO">
                                 <rect key="frame" x="30" y="64" width="354" height="127.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cXB-3Q-U1Y">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cXB-3Q-U1Y">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="25"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hru-QC-BdN">
-                                                <rect key="frame" x="0.0" y="0.0" width="321" height="25"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday, November 30th" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHT-sf-3FS">
+                                                <rect key="frame" x="0.0" y="4.5" width="175.5" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="TODAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hru-QC-BdN">
+                                                <rect key="frame" x="193.5" y="5.5" width="42" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                 <color key="textColor" red="0.77060199873096447" green="0.6328713263981085" blue="0.60807917851175897" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -264,6 +270,9 @@
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dad Joke  " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5m-ue-2Jz">
                                         <rect key="frame" x="0.0" y="45" width="354" height="82.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="354" id="uR7-bt-bl1"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -333,35 +342,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GBy-Z7-Xcs">
-                                <rect key="frame" x="57" y="119" width="300" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPO-Vk-1Dk">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBy-Z7-Xcs">
+                                <rect key="frame" x="30" y="54" width="354" height="56"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="ly6-ET-ItX">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="56"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="ly6-ET-ItX">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="56"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="barTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="K1d-eg-PzV" id="oEc-c7-lXK"/>
                                         </connections>
                                     </searchBar>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ly6-ET-ItX" firstAttribute="top" secondItem="GBy-Z7-Xcs" secondAttribute="top" id="1wK-Wa-G7r"/>
+                                    <constraint firstAttribute="bottom" secondItem="ly6-ET-ItX" secondAttribute="bottom" id="7JM-Y6-W7b"/>
+                                    <constraint firstItem="ly6-ET-ItX" firstAttribute="leading" secondItem="GBy-Z7-Xcs" secondAttribute="leading" id="9lm-Qr-rZd"/>
+                                    <constraint firstAttribute="height" constant="56" id="Osq-B5-Pa9"/>
+                                    <constraint firstAttribute="trailing" secondItem="ly6-ET-ItX" secondAttribute="trailing" id="yaF-ks-0bg"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GBy-Z7-Xcs" firstAttribute="top" secondItem="B8L-lN-C67" secondAttribute="top" constant="10" id="649-HB-GFU"/>
+                            <constraint firstItem="MPO-Vk-1Dk" firstAttribute="trailing" secondItem="B8L-lN-C67" secondAttribute="trailing" id="FkG-0t-LbU"/>
+                            <constraint firstItem="GBy-Z7-Xcs" firstAttribute="leading" secondItem="B8L-lN-C67" secondAttribute="leading" constant="30" id="KjV-T1-tbA"/>
+                            <constraint firstItem="MPO-Vk-1Dk" firstAttribute="top" secondItem="UIS-je-qSI" secondAttribute="top" id="Zyb-1T-e3G"/>
+                            <constraint firstAttribute="bottom" secondItem="MPO-Vk-1Dk" secondAttribute="bottom" id="hw4-dD-ZXX"/>
+                            <constraint firstItem="B8L-lN-C67" firstAttribute="trailing" secondItem="GBy-Z7-Xcs" secondAttribute="trailing" constant="30" id="qiy-JY-Gsa"/>
+                            <constraint firstItem="MPO-Vk-1Dk" firstAttribute="leading" secondItem="B8L-lN-C67" secondAttribute="leading" id="tGu-EH-awL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="B8L-lN-C67"/>
                     </view>
                     <navigationItem key="navigationItem" id="PdC-ec-hff"/>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
+                        <outlet property="blurView" destination="MPO-Vk-1Dk" id="5Cj-62-hJT"/>
                         <outlet property="searchBar" destination="ly6-ET-ItX" id="hh3-NV-n2I"/>
                         <outlet property="searchBarView" destination="GBy-Z7-Xcs" id="tOF-6b-9UP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qUH-FF-QrD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="875" y="137"/>
+            <point key="canvasLocation" x="873.91304347826099" y="136.60714285714286"/>
         </scene>
     </scenes>
     <resources>

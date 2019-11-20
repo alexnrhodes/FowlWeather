@@ -18,6 +18,8 @@ class SearchBarViewController: UIViewController, UISearchBarDelegate {
         searchBar.delegate = self
     }
     
+    #warning("set responders")
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let searchTerm = searchBar.text
         NotificationCenter.default.post(name: .searchTermChosen, object: nil, userInfo: ["searchTerm": searchTerm!])

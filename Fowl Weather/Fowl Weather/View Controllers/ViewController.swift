@@ -74,10 +74,7 @@ class ViewController: UIViewController {
     
     
     // MARK: - IBActions & Methods
-    
-    @IBAction func searchButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "SearchSegue", sender: self)
-    }
+   
     
     @objc private func performFetches() {
         
@@ -119,7 +116,7 @@ class ViewController: UIViewController {
     @objc func didReceiveSearchTerm(_ notification: Notification) {
         guard let searchTerm = notification.userInfo?.values.first as? String else { return }
         self.searchTerm = searchTerm
-        performFetches()
+//        performFetches()
     }
     
     private func updateViews() {
@@ -172,6 +169,8 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let currentCenterIndex = carouselCollectionView.currentCenterCellIndex?.row else { return }
+        print(currentCenterIndex)
         carouselCollectionView.didScroll()
     }
     
@@ -199,5 +198,19 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         carouselCollectionView.deviceRotated()
+    }
+}
+
+private typealias ScalingCarouselFlowDelegate = ViewController
+extension ScalingCarouselFlowDelegate: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 0
     }
 }

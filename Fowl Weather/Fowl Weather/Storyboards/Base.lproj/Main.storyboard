@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -326,6 +326,7 @@
                         <outlet property="tempHighLabel" destination="Gcv-YN-00e" id="uCA-9L-CqO"/>
                         <outlet property="tempLabel" destination="fXY-Y1-Iro" id="WJB-dK-p6w"/>
                         <outlet property="tempLowLabel" destination="u3Q-d9-vlV" id="og0-cw-pN1"/>
+                        <outlet property="todaysDateLabel" destination="WHT-sf-3FS" id="qqT-qs-aqN"/>
                         <outlet property="windDirectionLabel" destination="Hhi-ei-Nmz" id="EOB-N6-DsY"/>
                         <outlet property="windSpeedLabel" destination="b7O-xg-73v" id="PQr-bK-lDi"/>
                     </connections>

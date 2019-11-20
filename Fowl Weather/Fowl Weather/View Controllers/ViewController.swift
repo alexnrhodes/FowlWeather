@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     
     // MARK: - IBOutlets & Properties\
     
+    @IBOutlet weak var todaysDateLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var dadJokeLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
@@ -55,10 +56,18 @@ class ViewController: UIViewController {
     }
     
     
-    var dateFormatter: DateFormatter {
+    var sunriseDateFormatter: DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM-dd-yy, h:mm a"
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.dateFormat = "h:mm a"
+        formatter.timeZone = TimeZone.current
+        return formatter
+    }
+    
+    var todayDateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE, MMMM dd"
+        
+        formatter.timeZone = TimeZone.current
         return formatter
     }
     
@@ -124,17 +133,20 @@ class ViewController: UIViewController {
         guard let joke = joke,
             let currentWeather = currentWeather else {return}
         setBackground()
+
+        todaysDateLabel.text = todayDateFormatter.string(from: Date())
         dadJokeLabel.text = joke.joke
         cityLabel.text = currentWeather.cityName
         categoryLabel.text = currentWeather.weather.first
-        tempLabel.text = "\(currentWeather.temp)°"
-        tempHighLabel.text =  "\(currentWeather.tempMax)°"
-        tempLowLabel.text = "\(currentWeather.tempMin)°"
-        windSpeedLabel.text = "Wind speed: \(currentWeather.windSpeed) MPH"
+        tempLabel.text = "\(String(format: "%.0f", currentWeather.temp))°"
+        tempHighLabel.text =  "\(String(format: "%.0f", currentWeather.tempMax))°"
+        tempLowLabel.text = "\(String(format: "%.0f", currentWeather.tempMin))°"
+        windSpeedLabel.text = "Wind speed: \(String(format: "%.0f", currentWeather.windSpeed)) MPH"
         windDirectionLabel.text = "Wind Direction: \(currentWeather.windDirection)°"
         let sunriseDate = Date(timeIntervalSince1970: currentWeather.sunrise)
-        sunriseLabel.text = dateFormatter.string(from: sunriseDate)
-        sunsetLabel.text = "\(currentWeather.sunset)"
+        sunriseLabel.text = "Sunrise: \(sunriseDateFormatter.string(from: sunriseDate))"
+        let sunsetDate = Date(timeIntervalSince1970: currentWeather.sunset)
+        sunsetLabel.text = "Sunset: \(sunriseDateFormatter.string(from: sunsetDate))"
     }
     
     private func setBackground() {

@@ -88,19 +88,25 @@ class ViewController: UIViewController {
     @objc private func performFetches() {
         
         guard let searchTerm = searchTerm else { return }
-        
-        weatherController.fetchWeatherByZipCode(zipCode: searchTerm) { (_, error) in
-            if let error = error {
-                NSLog("Error fetching current weather: \(error)")
-                return
+        var searchTermChecker: String?
+        let numString: [Character] = ["0","1","2","3","4","5","6","7","8","9"]
+        let searchByZip = Int(searchTerm)
+        for char in searchTerm {
+            for num in numString {
+                if char == num {
+                    searchTermChecker = String(char)
+                }
             }
         }
-        
-        weatherController.fetchFiveDayByZipCode(zipCode: searchTerm) { (_, error) in
-            if let error = error {
-                NSLog("Error fetching current forecast: \(error)")
-                return
-            }
+        if searchByZip == nil && !searchTerm.isEmpty && searchTermChecker == nil {
+            performFetchByName(searchTerm: searchTerm)
+        } else if searchByZip != nil {
+            performFetchByZip(searchTerm: searchTerm)
+        } else if searchByZip == nil && searchTermChecker != nil {
+            //TODO: Pop alert Invalid Entry
+            print("invalid Entry")
+        } else {
+            //TODO: Pop alert Invalid entry
         }
         
         jokeController.fetchRandomJoke { (_, error) in
@@ -119,6 +125,37 @@ class ViewController: UIViewController {
         }
     }
     
+    private func performFetchByZip(searchTerm: String) {
+        weatherController.fetchWeatherByZipCode(zipCode: searchTerm) { (_, error) in
+            if let error = error {
+                NSLog("Error fetching current weather: \(error)")
+                return
+            }
+        }
+        
+        weatherController.fetchFiveDayByZipCode(zipCode: searchTerm) { (_, error) in
+            if let error = error {
+                NSLog("Error fetching current forecast: \(error)")
+                return
+            }
+        }
+    }
+    
+    private func performFetchByName(searchTerm: String) {
+        weatherController.fetchWeatherByCityName(cityName: searchTerm) { (_, error) in
+            if let error = error {
+                NSLog("Error fetching current weather: \(error)")
+                return
+            }
+        }
+        weatherController.fetchFiveDayByCityName(cityName: searchTerm) { (_, error) in
+            if let error = error {
+                NSLog("Error fetching current forecast: \(error)")
+                return
+            }
+        }
+    }
+    
     private func observeSearchTerm() {
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveSearchTerm(_:)), name: .searchTermChosen, object: nil)
     }
@@ -126,14 +163,13 @@ class ViewController: UIViewController {
     @objc func didReceiveSearchTerm(_ notification: Notification) {
         guard let searchTerm = notification.userInfo?.values.first as? String else { return }
         self.searchTerm = searchTerm
-        //        performFetches()
     }
     
     private func updateViews() {
         guard let joke = joke,
             let currentWeather = currentWeather else {return}
         setBackground()
-
+        
         todaysDateLabel.text = todayDateFormatter.string(from: Date())
         dadJokeLabel.text = joke.joke
         cityLabel.text = currentWeather.cityName
@@ -142,7 +178,7 @@ class ViewController: UIViewController {
         tempHighLabel.text =  "\(String(format: "%.0f", currentWeather.tempMax))°"
         tempLowLabel.text = "\(String(format: "%.0f", currentWeather.tempMin))°"
         windSpeedLabel.text = "Wind speed: \(String(format: "%.0f", currentWeather.windSpeed)) MPH"
-        windDirectionLabel.text = "Wind Direction: \(currentWeather.windDirection)°"
+        windDirectionLabel.text = "Wind Direction: \(cardinalDirectionHandler(directionInDegrees: currentWeather.windDirection))"
         let sunriseDate = Date(timeIntervalSince1970: currentWeather.sunrise)
         sunriseLabel.text = "Sunrise: \(sunriseDateFormatter.string(from: sunriseDate))"
         let sunsetDate = Date(timeIntervalSince1970: currentWeather.sunset)
@@ -175,6 +211,49 @@ class ViewController: UIViewController {
             break
         }
     }
+    
+    private func cardinalDirectionHandler(directionInDegrees: Int) -> String {
+        var cardinalDirection: String = ""
+        switch directionInDegrees {
+        case (0...11):
+            cardinalDirection = "N"
+        case (12...33):
+            cardinalDirection = "N/NE"
+        case (34...56):
+            cardinalDirection = "NE"
+        case (57...78):
+            cardinalDirection = "E/NE"
+        case (79...101):
+            cardinalDirection = "E"
+        case (102...123):
+            cardinalDirection = "E/SE"
+        case (124...146):
+            cardinalDirection = "SE"
+        case (147...168):
+            cardinalDirection = "S/SE"
+        case (169...191):
+            cardinalDirection = "S"
+        case (192...213):
+            cardinalDirection = "S/SW"
+        case (214...236):
+            cardinalDirection = "SW"
+        case (237...258):
+            cardinalDirection = "W/SW"
+        case (259...281):
+            cardinalDirection = "W"
+        case (282...303):
+            cardinalDirection = "W/NW"
+        case (304...326):
+            cardinalDirection = "NW"
+        case (327...348):
+            cardinalDirection = "N/NW"
+        case (349...360):
+            cardinalDirection = "N"
+        default:
+            cardinalDirection = ""
+        }
+        return cardinalDirection
+    }
 }
 
 // MARK: - Extensions
@@ -182,7 +261,7 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-                carouselCollectionView.didScroll()
+        carouselCollectionView.didScroll()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

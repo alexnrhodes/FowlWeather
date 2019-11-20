@@ -10,6 +10,18 @@ import UIKit
 import ScalingCarousel
 import SHSearchBar
 
+enum WeatherType: String {
+    case clear = "clear skys"
+    case fewClouds = "few clouds"
+    case scatteredClouds = "scattered clouds"
+    case brokenClouds = "broken clouds"
+    case shower = "shower rain"
+    case rain = "rain"
+    case storm = "thunderstorm"
+    case snow = "snow"
+    case mist = "mist"
+}
+
 class ViewController: UIViewController {
     
     // MARK: - IBOutlets & Properties\
@@ -113,7 +125,7 @@ class ViewController: UIViewController {
     private func updateViews() {
         guard let joke = joke,
             let currentWeather = currentWeather else {return}
-        
+        setBackground()
         dadJokeLabel.text = joke.joke
         cityLabel.text = currentWeather.cityName
         categoryLabel.text = currentWeather.weather.first
@@ -131,8 +143,24 @@ class ViewController: UIViewController {
         guard let currentWeather = currentWeather else {return}
         
         switch currentWeather.weather.first {
-        case "cloudy":
+        case WeatherType.clear.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "sunny")
+        case WeatherType.fewClouds.rawValue:
             backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
+        case WeatherType.scatteredClouds.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
+        case WeatherType.brokenClouds.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
+        case WeatherType.shower.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "sunnyShowers")
+        case WeatherType.rain.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "showers")
+        case WeatherType.storm.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "stormy")
+        case WeatherType.snow.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "snowy")
+        case WeatherType.mist.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "showers")
         default:
             break
         }

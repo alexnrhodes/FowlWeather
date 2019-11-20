@@ -322,11 +322,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GBy-Z7-Xcs">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBy-Z7-Xcs">
                                 <rect key="frame" x="57" y="119" width="300" height="56"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" ambiguous="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="ly6-ET-ItX">
+                                    <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="ly6-ET-ItX">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="56"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="K1d-eg-PzV" id="oEc-c7-lXK"/>
@@ -334,16 +335,13 @@
                                     </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstItem="ly6-ET-ItX" firstAttribute="leading" secondItem="GBy-Z7-Xcs" secondAttribute="leading" id="447-cM-KaW"/>
-                                    <constraint firstAttribute="bottom" secondItem="ly6-ET-ItX" secondAttribute="bottom" id="DpH-aa-woh"/>
-                                    <constraint firstAttribute="trailing" secondItem="ly6-ET-ItX" secondAttribute="trailing" id="WNG-Xw-dff"/>
-                                    <constraint firstItem="ly6-ET-ItX" firstAttribute="top" secondItem="GBy-Z7-Xcs" secondAttribute="top" id="q9l-82-cY1"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="GBy-Z7-Xcs" firstAttribute="centerX" secondItem="UIS-je-qSI" secondAttribute="centerX" id="JjF-x7-cML"/>
+                            <constraint firstItem="GBy-Z7-Xcs" firstAttribute="leading" secondItem="B8L-lN-C67" secondAttribute="leading" constant="57" id="ZFC-xH-uTl"/>
+                            <constraint firstItem="B8L-lN-C67" firstAttribute="bottom" secondItem="GBy-Z7-Xcs" secondAttribute="bottom" constant="687" id="dZ4-uM-OAi"/>
                             <constraint firstItem="GBy-Z7-Xcs" firstAttribute="top" secondItem="B8L-lN-C67" secondAttribute="top" constant="75" id="ifi-so-nzs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="B8L-lN-C67"/>

@@ -11,7 +11,7 @@ import ScalingCarousel
 import SHSearchBar
 
 enum WeatherType: String {
-    case clear = "clear skys"
+    case clear = "clear sky"
     case fewClouds = "few clouds"
     case scatteredClouds = "scattered clouds"
     case brokenClouds = "broken clouds"
@@ -76,8 +76,7 @@ class ViewController: UIViewController {
     // MARK: - IBActions & Methods
     
     @IBAction func searchButtonTapped(_ sender: UIButton) {
-        // Framework for modal search bar presentation
-        performFetches()
+        performSegue(withIdentifier: "SearchSegue", sender: self)
     }
     
     @objc private func performFetches() {
@@ -120,6 +119,7 @@ class ViewController: UIViewController {
     @objc func didReceiveSearchTerm(_ notification: Notification) {
         guard let searchTerm = notification.userInfo?.values.first as? String else { return }
         self.searchTerm = searchTerm
+        performFetches()
     }
     
     private func updateViews() {

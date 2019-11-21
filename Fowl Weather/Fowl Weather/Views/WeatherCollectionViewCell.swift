@@ -45,10 +45,14 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
             iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
         case WeatherType.brokenClouds.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+        case WeatherType.overcastClouds.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
         case WeatherType.shower.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "rain")
         case WeatherType.rain.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "rainy")
+        case WeatherType.lightRain.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "rain")
         case WeatherType.storm.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "storm")
         case WeatherType.snow.rawValue:
@@ -64,6 +68,7 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
         dayLabel.text = dateFormatter.string(from: date)
         tempHigh.text = String(format: "%.0f", forcastedWeatherDay.tempMax)
         tempLow.text = String(format: "%.0f", forcastedWeatherDay.tempMin)
+        rainPercentageLabel.text = "\(forcastedWeatherDay.cloudPercentage)%"
         categoryLabel.text = forcastedWeatherDay.weather.first
         
     }

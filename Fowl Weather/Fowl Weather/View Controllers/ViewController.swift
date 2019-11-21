@@ -42,6 +42,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var sunsetLabel: UILabel!
     @IBOutlet weak var carouselCollectionView: ScalingCarouselView!
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var rainPercentageLabel: UILabel!
     
     // Controller Properties
     let weatherController = WeatherController()

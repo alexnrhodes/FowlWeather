@@ -49,11 +49,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="285" height="175"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view alpha="0.14999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YZs-NU-GuL" userLabel="backgoundView">
-                                                    <rect key="frame" x="-0.5" y="0.0" width="285" height="175"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                </view>
                                                 <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3Z-3O-KPs">
                                                     <rect key="frame" x="0.0" y="0.0" width="285" height="175"/>
                                                     <subviews>
@@ -138,19 +133,19 @@
                                                             </subviews>
                                                         </stackView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zsz-bO-FNo">
-                                                            <rect key="frame" x="135" y="25" width="125" height="125"/>
+                                                            <rect key="frame" x="125" y="20" width="135" height="135"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="zsz-bO-FNo" secondAttribute="height" multiplier="1:1" id="L8s-Qh-d9U"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="zsz-bO-FNo" firstAttribute="centerY" secondItem="y3Z-3O-KPs" secondAttribute="centerY" id="0qQ-2x-D4g"/>
                                                         <constraint firstItem="ASK-es-wxV" firstAttribute="leading" secondItem="zEG-mC-hf5" secondAttribute="leading" id="489-hQ-V0B"/>
                                                         <constraint firstAttribute="height" constant="175" id="6ws-k3-Mi1"/>
                                                         <constraint firstItem="aOb-gm-Zn8" firstAttribute="width" secondItem="zEG-mC-hf5" secondAttribute="width" id="ErY-Eq-Mlt"/>
-                                                        <constraint firstAttribute="bottom" secondItem="zsz-bO-FNo" secondAttribute="bottom" constant="25" id="GEU-4C-QBv"/>
+                                                        <constraint firstAttribute="bottom" secondItem="zsz-bO-FNo" secondAttribute="bottom" constant="20" id="GEU-4C-QBv"/>
                                                         <constraint firstItem="zEG-mC-hf5" firstAttribute="top" secondItem="aOb-gm-Zn8" secondAttribute="bottom" constant="8" id="IEI-vo-AVN"/>
                                                         <constraint firstItem="zEG-mC-hf5" firstAttribute="leading" secondItem="aOb-gm-Zn8" secondAttribute="leading" id="M19-80-Tcd"/>
                                                         <constraint firstItem="aOb-gm-Zn8" firstAttribute="leading" secondItem="y3Z-3O-KPs" secondAttribute="leading" constant="25" id="Mgk-3Q-v6T"/>
@@ -178,9 +173,9 @@
                                             <outlet property="dayLabel" destination="aOb-gm-Zn8" id="9sF-gh-Fis"/>
                                             <outlet property="iconImageView" destination="zsz-bO-FNo" id="ud6-mp-t2a"/>
                                             <outlet property="mainView" destination="y3Z-3O-KPs" id="M8t-g5-thP"/>
+                                            <outlet property="rainPercentageLabel" destination="A9T-va-9bN" id="war-Wm-xDF"/>
                                             <outlet property="tempHigh" destination="zns-U9-nlr" id="4M0-kj-PMc"/>
                                             <outlet property="tempLow" destination="cWo-7A-sGL" id="kiN-xJ-wVI"/>
-                                            <outlet property="transucentView" destination="YZs-NU-GuL" id="OVJ-Bx-Ivb"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -377,6 +372,7 @@
                         <outlet property="cityLabel" destination="Dc4-hL-KxV" id="D6V-B9-3W4"/>
                         <outlet property="dadJokeLabel" destination="P5m-ue-2Jz" id="PC9-Ew-PKe"/>
                         <outlet property="dayLabel" destination="hru-QC-BdN" id="drP-CR-cbg"/>
+                        <outlet property="rainPercentageLabel" destination="6sM-Fo-2Du" id="665-1O-xYM"/>
                         <outlet property="sunriseLabel" destination="lzx-os-I0l" id="q6z-vu-ISP"/>
                         <outlet property="sunsetLabel" destination="Jv9-Gq-0T3" id="fNg-Q9-IKJ"/>
                         <outlet property="tempHighLabel" destination="Gcv-YN-00e" id="uCA-9L-CqO"/>

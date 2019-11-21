@@ -29,12 +29,10 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
     @IBOutlet weak var tempHigh: UILabel!
     @IBOutlet weak var tempLow: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var transucentView: UIView!
+    @IBOutlet weak var rainPercentageLabel: UILabel!
     
     private func updateViews() {
-        
-        transucentView.layer.cornerRadius = 10
-        transucentView.translatesAutoresizingMaskIntoConstraints = false
+     
         
         guard let forcastedWeatherDay = forcastedWeatherDay else {return}
         

@@ -124,6 +124,7 @@ class ViewController: UIViewController {
         sunriseLabel.text = "Sunrise: \(sunriseDateFormatter.string(from: sunriseDate))"
         let sunsetDate = Date(timeIntervalSince1970: currentWeather.sunset)
         sunsetLabel.text = "Sunset: \(sunriseDateFormatter.string(from: sunsetDate))"
+        rainPercentageLabel.text = "\(currentWeather.cloudPercentage)%"
     }
     
 //    private func setNightBackground() {
@@ -169,6 +170,8 @@ class ViewController: UIViewController {
         case WeatherType.scatteredClouds.rawValue:
             backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
         case WeatherType.brokenClouds.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
+        case WeatherType.overcastClouds.rawValue:
             backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
         case WeatherType.shower.rawValue:
             backgroundImageView.image = #imageLiteral(resourceName: "sunnyShowers")

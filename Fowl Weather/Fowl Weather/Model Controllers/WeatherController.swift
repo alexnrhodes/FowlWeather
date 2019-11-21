@@ -302,6 +302,7 @@ class WeatherController {
         var tempLow: Double?
         var tempHigh: Double = 0.0
         var tempTotal: Double = 0.0
+        var clouds: Int = 0
         
         for day in hours {
             if tempLow == nil {
@@ -312,12 +313,15 @@ class WeatherController {
             if day.tempMax > tempHigh {
                 tempHigh = day.tempMax
             }
+            
             tempTotal += day.temp
+            clouds += day.cloudPercentage
         }
         
         tempTotal /= Double(hours.count)
+        clouds /= hours.count
         
-        let day = ForcastedWeatherDay(weather: hours[0].weather, temp: tempTotal, tempMin: tempLow!, tempMax: tempHigh, date: hours[0].date)
+        let day = ForcastedWeatherDay(weather: hours[0].weather, temp: tempTotal, tempMin: tempLow!, tempMax: tempHigh, cloudPercentage: clouds, date: hours[0].date)
         
         return day
     }

@@ -43,6 +43,8 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
             iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
         case WeatherType.scatteredClouds.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+        case WeatherType.overcastClouds.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
         case WeatherType.brokenClouds.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
         case WeatherType.shower.rawValue:

@@ -25,14 +25,14 @@ class SearchBarViewController: UIViewController, UISearchBarDelegate {
         
 //        NSLayoutConstraint(item: blurView!, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 1).isActive = true
         
-        searchBar.placeholder = "Search by ZIP"
+        searchBar.placeholder = "Search"
         searchBar.layer.cornerRadius = 10
         searchBarView.layer.cornerRadius = 10
        
         if !UIAccessibility.isReduceTransparencyEnabled {
             blurView.backgroundColor = .clear
 
-            let blurEffect = UIBlurEffect(style: .dark)
+            let blurEffect = UIBlurEffect(style: .systemChromeMaterial)
             let blurEffectView = UIVisualEffectView(effect: blurEffect)
             //always fill the view
             blurEffectView.frame = self.view.frame

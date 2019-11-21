@@ -8,4 +8,5 @@ target 'Fowl Weather' do
   # Pods for Fowl Weather
 pod "ScalingCarousel"
 pod "SHSearchBar"
+pod 'SwiftLint'
 end

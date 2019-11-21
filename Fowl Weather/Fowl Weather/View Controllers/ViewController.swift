@@ -89,7 +89,7 @@ class ViewController: UIViewController {
     }
     
     // MARK: - IBActions & Methods
-    
+  
     private func observeSearchTerm() {
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveSearchTerm(_:)), name: .searchTermChosen, object: nil)
     }
@@ -129,7 +129,6 @@ class ViewController: UIViewController {
         guard let sunrise = Double(hourlyTime.string(from: sunriseDate)),
             let sunset = Double(hourlyTime.string(from: sunsetDate)) else {return}
         
-        
         switch currentWeather.weather.first {
             
         // clear
@@ -156,8 +155,7 @@ class ViewController: UIViewController {
             } else {
                 backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
             }
-            
-            
+        
         // rain
         case WeatherType.shower.rawValue,
              WeatherType.rain.rawValue,
@@ -172,8 +170,6 @@ class ViewController: UIViewController {
             } else {
                 backgroundImageView.image = #imageLiteral(resourceName: "sunnyShowers")
             }
-            
-            
             
         //storm
         case WeatherType.storm.rawValue,
@@ -202,7 +198,6 @@ class ViewController: UIViewController {
                 backgroundImageView.image = #imageLiteral(resourceName: "stormy")
             }
             
-            
         // snow
         case WeatherType.snow.rawValue,
              WeatherType.lightSnow.rawValue,
@@ -221,8 +216,7 @@ class ViewController: UIViewController {
             } else {
                 backgroundImageView.image = #imageLiteral(resourceName: "snowy")
             }
-            
-            
+        
         // other
         case WeatherType.smoke.rawValue:
             cloudyNightCloudyday(date: date, sunset: sunset, sunrise: sunrise)
@@ -244,7 +238,6 @@ class ViewController: UIViewController {
             cloudyNightCloudyday(date: date, sunset: sunset, sunrise: sunrise)
         default:
             NSLog("You are missing an enum case: \(String(describing: currentWeather.weather.first))")
-            break
         }
     }
     
@@ -283,10 +276,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
         }
-        
-        
         return cell
-        
     }
 }
 
@@ -303,4 +293,3 @@ extension ScalingCarouselFlowDelegate: UICollectionViewDelegateFlowLayout {
         return 0
     }
 }
-

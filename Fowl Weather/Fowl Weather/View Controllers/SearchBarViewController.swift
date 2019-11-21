@@ -21,9 +21,6 @@ class SearchBarViewController: UIViewController, UISearchBarDelegate {
     }
     
     private func updateViews() {
-       
-        
-//        NSLayoutConstraint(item: blurView!, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 1).isActive = true
         
         searchBar.placeholder = "Search by city or zip"
         searchBar.layer.cornerRadius = 10
@@ -37,14 +34,13 @@ class SearchBarViewController: UIViewController, UISearchBarDelegate {
             //always fill the view
             blurEffectView.frame = self.view.frame
             
-            blurView.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+            blurView.addSubview(blurEffectView)
         } else {
             view.backgroundColor = .black
         }
       
     }
     
- 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let searchTerm = searchBar.text
         NotificationCenter.default.post(name: .searchTermChosen, object: nil, userInfo: ["searchTerm": searchTerm!])

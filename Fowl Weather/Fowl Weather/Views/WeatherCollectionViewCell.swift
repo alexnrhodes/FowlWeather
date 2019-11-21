@@ -32,8 +32,7 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
     @IBOutlet weak var rainPercentageLabel: UILabel!
     
     private func updateViews() {
-        
-        
+    
         guard let forcastedWeatherDay = forcastedWeatherDay else {return}
         
         switch forcastedWeatherDay.weather.first {
@@ -123,7 +122,6 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
             iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
         default:
             NSLog("You are missing an enum case in cell: \(String(describing: forcastedWeatherDay.weather.first))")
-            break
         }
         
         let date = Date(timeIntervalSince1970: forcastedWeatherDay.date)

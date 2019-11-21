@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+// swiftlint:disable all
 struct CurrentWeather: Codable {
     let cityName: String
     let weather: [String]

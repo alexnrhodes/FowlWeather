@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 enum WeatherType: String, CaseIterable {
     case clear = "clear sky"
     case fewClouds = "few clouds"
@@ -51,7 +50,7 @@ enum WeatherType: String, CaseIterable {
     case raggedShowerRain = "ragged shower rain"
     case lightSnow = "light snow"
     case snowOther = "Snow"
-    case heavySnow = "Heavy snow "
+    case heavySnow = "Heavy snow"
     case sleet = "Sleet"
     case lightShowerSleet = "Light shower sleet"
     case showerSleet = "Shower sleet"
@@ -70,5 +69,3 @@ enum WeatherType: String, CaseIterable {
     case squalls = "squalls"
     case tornado = "tornado"
 }
-
-

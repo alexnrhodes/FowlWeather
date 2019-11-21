@@ -32,7 +32,7 @@ class JokeController {
                 return
             }
             
-            do{
+            do {
                 let joke = try JSONDecoder().decode(Joke.self, from: data)
                 self.joke = joke
                 completion(joke, nil)
@@ -43,4 +43,3 @@ class JokeController {
         }.resume()
     }
 }
-

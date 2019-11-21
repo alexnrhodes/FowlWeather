@@ -11,20 +11,6 @@ import ScalingCarousel
 import SHSearchBar
 import CoreLocation
 
-enum WeatherType: String, CaseIterable {
-    case clear = "clear sky"
-    case fewClouds = "few clouds"
-    case scatteredClouds = "scattered clouds"
-    case brokenClouds = "broken clouds"
-    case overcastClouds = "overcast clouds"
-    case shower = "shower rain"
-    case lightRain = "light rain"
-    case rain = "rain"
-    case storm = "thunderstorm"
-    case snow = "snow"
-    case mist = "mist"
-}
-
 class ViewController: UIViewController {
     
     // MARK: - IBOutlets & Properties\
@@ -55,14 +41,21 @@ class ViewController: UIViewController {
     var joke: Joke?
     var searchTerm: String? {
         didSet {
-            performFetches()
+            fetchCLLocationFromSearch(with: searchTerm ?? "Cupertino")
         }
     }
     
     // Location Manager
     let locationManger = CLLocationManager()
     var userLocation: CLLocation?
+    var geocoder = CLGeocoder()
+    var searchedLocation: CLLocation? {
+        didSet {
+            performFetches()
+        }
+    }
     
+    // Date Formatters
     var sunriseDateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "h:mm a"

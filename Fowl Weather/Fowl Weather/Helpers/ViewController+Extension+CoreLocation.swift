@@ -37,6 +37,19 @@ extension ViewController: CLLocationManagerDelegate {
         }
     }
     
+    func fetchCLLocationFromSearch(with searchTerm: String) {
+        geocoder.geocodeAddressString(searchTerm) { (placeMarks, error) in
+            if let error = error {
+                NSLog("Error getting CLLocation from searchTerm: \(searchTerm) with error:\(error)")
+                return
+            }
+            
+            guard let placemark = placeMarks?.first,
+                let location = placemark.location else { return }
+            self.searchedLocation = location
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         userLocation = locations.last
         performFetchByLocation(location: userLocation!)

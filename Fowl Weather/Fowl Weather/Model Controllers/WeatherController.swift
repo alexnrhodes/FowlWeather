@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class WeatherController {
     
@@ -18,7 +19,7 @@ class WeatherController {
     var fiveDayForcast: [ForcastedWeatherDay]?
     var weatherDays: [ForcastedWeatherDay] = []
     
-    //MARK: - Fetch Weather By City Name
+    //MARK: - Fetch Current Weather By City Name
     
     func fetchWeatherByCityName(cityName: String, completion: @escaping (CurrentWeather?, Error?) -> Void ) {
         var url = baseURL.appendingPathComponent("weather")
@@ -57,7 +58,7 @@ class WeatherController {
         }.resume()
     }
     
-    //MARK: - Fetch Weather By Zip Code
+    //MARK: - Fetch Current Weather By Zip Code
     
     func fetchWeatherByZipCode(zipCode: String, completion: @escaping (CurrentWeather?, Error?) -> Void ) {
         
@@ -95,6 +96,46 @@ class WeatherController {
         }.resume()
     }
     
+    //MARK: - Fetch Current By User Location
+    
+    func fetchWeatherByLocation(location: CLLocation, completion: @escaping (CurrentWeather?, Error?) -> Void ) {
+         
+         var url = baseURL.appendingPathComponent("weather")
+         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
+         let latitudeString = String(location.coordinate.latitude)
+         let longitudeString = String(location.coordinate.longitude)
+         let latQueryItem = URLQueryItem(name: "lat", value: latitudeString)
+         let lonQueryItem = URLQueryItem(name: "lon", value: longitudeString)
+         let imperialQueryItem = URLQueryItem(name: "units", value: "imperial")
+         let apiKeyQueryItem = URLQueryItem(name: "apiKey", value: apiKey)
+         components.queryItems = [latQueryItem, lonQueryItem, imperialQueryItem, apiKeyQueryItem]
+         url = components.url!
+         
+         Group.dispatchGroup.enter()
+         URLSession.shared.dataTask(with: url) { (data, _, error) in
+             if let error = error {
+                 NSLog("Error fetching city by name:\(error)")
+                 completion(nil, error)
+                 return
+             }
+             
+             guard let data = data else {
+                 let error = NSError()
+                 NSLog("Bad data. Error with date when fetching weather by zipcode: \(location) with error:\(error)")
+                 return
+             }
+             
+             do{
+                 let weatherDay = try JSONDecoder().decode(CurrentWeather.self, from: data)
+                 self.currentWeather = weatherDay
+                 completion(self.currentWeather, nil)
+             } catch {
+                 NSLog("Unable to decode data into CurrentWeather object:\(error)")
+             }
+             Group.dispatchGroup.leave()
+         }.resume()
+     }
+    
     //MARK: - Fetch 5-Day Weather Forcast By City Name
     
     func fetchFiveDayByCityName(cityName: String, completion: @escaping ([ForcastedWeatherDay]?, Error?) -> Void ) {
@@ -122,13 +163,11 @@ class WeatherController {
                 return
             }
             
-            var weatherDays:[ForcastedWeatherDay] = []
-            
             do{
                 let weatherList = try JSONDecoder().decode(FiveDayForcast.self, from: data)
-                weatherDays = weatherList.list
-                self.fiveDayForcast = weatherDays
-                completion(weatherDays, nil)
+                self.weatherDays = weatherList.list
+                self.fiveDayForcast = self.cleanFiveDayForecast(daysToClean: self.weatherDays)
+                completion(self.weatherDays, nil)
             } catch {
                 NSLog("Unable to decode data into CurrentWeather object:\(error)")
             }
@@ -161,6 +200,49 @@ class WeatherController {
             guard let data = data else {
                 let error = NSError()
                 NSLog("Bad data. Error with date when fetching weather by zip code: \(zipCode) with error:\(error)")
+                return
+            }
+
+            do{
+                let weatherList = try JSONDecoder().decode(FiveDayForcast.self, from: data)
+                self.weatherDays = weatherList.list
+                self.fiveDayForcast = self.cleanFiveDayForecast(daysToClean: self.weatherDays)
+                completion(self.fiveDayForcast, nil)
+            } catch {
+                NSLog("Unable to decode data into CurrentWeather object:\(error)")
+            }
+            Group.dispatchGroup.leave()
+        }.resume()
+    }
+    
+    //MARK: - Fetch 5-Day Weather Forcast By Location
+    
+    func fetchFiveDayByLocation(location: CLLocation, completion: @escaping ([ForcastedWeatherDay]?, Error?) -> Void ) {
+        var url = baseURL.appendingPathComponent("forecast")
+        
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
+        let latitudeString = String(location.coordinate.latitude)
+        let longitudeString = String(location.coordinate.longitude)
+        let latQueryItem = URLQueryItem(name: "lat", value: latitudeString)
+        let lonQueryItem = URLQueryItem(name: "lon", value: longitudeString)
+        let imperialQueryItem = URLQueryItem(name: "units", value: "imperial")
+        let apiKeyQueryItem = URLQueryItem(name: "apiKey", value: apiKey)
+        components.queryItems = [latQueryItem, lonQueryItem, imperialQueryItem, apiKeyQueryItem]
+        url = components.url!
+        print("The url is \(url)")
+        
+        Group.dispatchGroup.enter()
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            
+            if let error = error {
+                NSLog("Error fetching city by name:\(error)")
+                completion(nil, error)
+                return
+            }
+            
+            guard let data = data else {
+                let error = NSError()
+                NSLog("Bad data. Error with date when fetching weather by zip code: \(location) with error:\(error)")
                 return
             }
 

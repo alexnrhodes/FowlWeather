@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		321DC7B62386011600F1AF69 /* ViewController+Extension+CoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321DC7B52386011600F1AF69 /* ViewController+Extension+CoreLocation.swift */; };
+		321DC7B8238602FB00F1AF69 /* ViewController+Extension+FetchHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321DC7B7238602FB00F1AF69 /* ViewController+Extension+FetchHelpers.swift */; };
+		321DC7BA2386044800F1AF69 /* ViewController+Extension+HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321DC7B92386044800F1AF69 /* ViewController+Extension+HelperFunctions.swift */; };
 		322939F323830ADD005B83F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322939F223830ADD005B83F4 /* AppDelegate.swift */; };
 		322939F523830ADD005B83F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322939F423830ADD005B83F4 /* SceneDelegate.swift */; };
 		322939F723830ADD005B83F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322939F623830ADD005B83F4 /* ViewController.swift */; };
@@ -23,12 +26,14 @@
 		38C86995238480CC004428EA /* DispatchGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C86994238480CC004428EA /* DispatchGroup.swift */; };
 		38C8699723849498004428EA /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C8699623849498004428EA /* SearchBarViewController.swift */; };
 		38C8699923849921004428EA /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C8699823849921004428EA /* Notification+Extension.swift */; };
-		38C8699C238583D5004428EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38C8699B238583D5004428EA /* Assets.xcassets */; };
 		B9535BFB47EB4E945B523333 /* Pods_Fowl_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7777F38B02227B1065740C5 /* Pods_Fowl_Weather.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		06B896D4CBCC5BBC7104EC29 /* Pods-Fowl Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fowl Weather.debug.xcconfig"; path = "Target Support Files/Pods-Fowl Weather/Pods-Fowl Weather.debug.xcconfig"; sourceTree = "<group>"; };
+		321DC7B52386011600F1AF69 /* ViewController+Extension+CoreLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension+CoreLocation.swift"; sourceTree = "<group>"; };
+		321DC7B7238602FB00F1AF69 /* ViewController+Extension+FetchHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension+FetchHelpers.swift"; sourceTree = "<group>"; };
+		321DC7B92386044800F1AF69 /* ViewController+Extension+HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension+HelperFunctions.swift"; sourceTree = "<group>"; };
 		322939EF23830ADD005B83F4 /* Fowl Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fowl Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		322939F223830ADD005B83F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		322939F423830ADD005B83F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +53,6 @@
 		38C86994238480CC004428EA /* DispatchGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchGroup.swift; sourceTree = "<group>"; };
 		38C8699623849498004428EA /* SearchBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewController.swift; sourceTree = "<group>"; };
 		38C8699823849921004428EA /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
-		38C8699B238583D5004428EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../../../Desktop/Assets.xcassets; sourceTree = "<group>"; };
 		B7777F38B02227B1065740C5 /* Pods_Fowl_Weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fowl_Weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,7 +103,6 @@
 		32293A0623830B04005B83F4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				38C8699B238583D5004428EA /* Assets.xcassets */,
 				322939F223830ADD005B83F4 /* AppDelegate.swift */,
 				322939F423830ADD005B83F4 /* SceneDelegate.swift */,
 				322939FB23830AE1005B83F4 /* Assets.xcassets */,
@@ -159,6 +162,9 @@
 			children = (
 				38C86994238480CC004428EA /* DispatchGroup.swift */,
 				38C8699823849921004428EA /* Notification+Extension.swift */,
+				321DC7B52386011600F1AF69 /* ViewController+Extension+CoreLocation.swift */,
+				321DC7B7238602FB00F1AF69 /* ViewController+Extension+FetchHelpers.swift */,
+				321DC7B92386044800F1AF69 /* ViewController+Extension+HelperFunctions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -242,7 +248,6 @@
 			files = (
 				322939FF23830AE1005B83F4 /* LaunchScreen.storyboard in Resources */,
 				322939FC23830AE1005B83F4 /* Assets.xcassets in Resources */,
-				38C8699C238583D5004428EA /* Assets.xcassets in Resources */,
 				322939FA23830ADD005B83F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,12 +305,15 @@
 				32293A0A23830B5C005B83F4 /* CurrentWeather.swift in Sources */,
 				38C8699723849498004428EA /* SearchBarViewController.swift in Sources */,
 				32293A0C23830B69005B83F4 /* Joke.swift in Sources */,
+				321DC7BA2386044800F1AF69 /* ViewController+Extension+HelperFunctions.swift in Sources */,
 				38C869932384808A004428EA /* ForcastedWeatherDay.swift in Sources */,
 				32293A0F23830B80005B83F4 /* WeatherController.swift in Sources */,
 				32293A1423830BAA005B83F4 /* AlexsCustomView.swift in Sources */,
 				322939F723830ADD005B83F4 /* ViewController.swift in Sources */,
 				322939F323830ADD005B83F4 /* AppDelegate.swift in Sources */,
 				38C8699923849921004428EA /* Notification+Extension.swift in Sources */,
+				321DC7B8238602FB00F1AF69 /* ViewController+Extension+FetchHelpers.swift in Sources */,
+				321DC7B62386011600F1AF69 /* ViewController+Extension+CoreLocation.swift in Sources */,
 				32293A1123830B8C005B83F4 /* JokeController.swift in Sources */,
 				38C86995238480CC004428EA /* DispatchGroup.swift in Sources */,
 				322939F523830ADD005B83F4 /* SceneDelegate.swift in Sources */,
@@ -454,14 +462,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RCQFNX9QQ7;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = YM84C6XKT7;
 				INFOPLIST_FILE = "Fowl Weather/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alexandrarhodes.Fowl-Weather";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jakeconnerly.Fowl-Weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -474,14 +483,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RCQFNX9QQ7;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = YM84C6XKT7;
 				INFOPLIST_FILE = "Fowl Weather/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alexandrarhodes.Fowl-Weather";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jakeconnerly.Fowl-Weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

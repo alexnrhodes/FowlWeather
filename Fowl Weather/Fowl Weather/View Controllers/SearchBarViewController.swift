@@ -42,6 +42,7 @@ class SearchBarViewController: UIViewController, UISearchBarDelegate {
             view.backgroundColor = .black
         }
         
+        let alex = "alex"
     }
     
  

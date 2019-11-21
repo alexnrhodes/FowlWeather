@@ -29,16 +29,18 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
     @IBOutlet weak var tempHigh: UILabel!
     @IBOutlet weak var tempLow: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var transucentView: UIView!
     
     private func updateViews() {
         
-        self.mainView.alpha = 0.1
+        transucentView.layer.cornerRadius = 10
+        transucentView.translatesAutoresizingMaskIntoConstraints = false
         
         guard let forcastedWeatherDay = forcastedWeatherDay else {return}
         
         switch forcastedWeatherDay.weather.first {
         case WeatherType.clear.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "clearSky")
+            iconImageView.image = #imageLiteral(resourceName: "sun-transparent-png-images-free-download-Sun-PNG-Transparent-Image")
         case WeatherType.fewClouds.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
         case WeatherType.scatteredClouds.rawValue:
@@ -56,6 +58,7 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
         case WeatherType.mist.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "rainy")
         default:
+            print(forcastedWeatherDay.weather.first)
             iconImageView.image = #imageLiteral(resourceName: "clearSky")
         }
         
@@ -63,7 +66,7 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
         dayLabel.text = dateFormatter.string(from: date)
         tempHigh.text = String(format: "%.0f", forcastedWeatherDay.tempMax)
         tempLow.text = String(format: "%.0f", forcastedWeatherDay.tempMin)
-        
+        categoryLabel.text = forcastedWeatherDay.weather.first
         
     }
 }

@@ -49,11 +49,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="285" height="175"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3Z-3O-KPs">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3Z-3O-KPs">
                                                     <rect key="frame" x="0.0" y="0.0" width="285" height="175"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WEj-YT-fs0">
-                                                            <rect key="frame" x="25" y="115" width="78.5" height="35"/>
+                                                            <rect key="frame" x="30" y="115" width="78.5" height="35"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yEG-xw-2Gp">
                                                                     <rect key="frame" x="0.0" y="0.0" width="23.5" height="35"/>
@@ -103,19 +103,20 @@
                                                             </subviews>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuesday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOb-gm-Zn8" customClass="We">
-                                                            <rect key="frame" x="25" y="25" width="78.5" height="18"/>
+                                                            <rect key="frame" x="30" y="25" width="78.5" height="18"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                             <color key="textColor" red="0.95112230330000003" green="0.95112230330000003" blue="0.95112230330000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOWERS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEG-mC-hf5">
-                                                            <rect key="frame" x="25" y="51" width="78.5" height="14.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOWERS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zEG-mC-hf5">
+                                                            <rect key="frame" x="30" y="51" width="78.5" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ASK-es-wxV">
-                                                            <rect key="frame" x="25" y="77.5" width="50" height="20"/>
+                                                            <rect key="frame" x="30" y="77.5" width="50" height="20"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rainy" translatesAutoresizingMaskIntoConstraints="NO" id="3eP-KJ-hXv">
                                                                     <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -133,9 +134,11 @@
                                                             </subviews>
                                                         </stackView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zsz-bO-FNo">
-                                                            <rect key="frame" x="125" y="20" width="135" height="135"/>
+                                                            <rect key="frame" x="155" y="37.5" width="100" height="100"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="zsz-bO-FNo" secondAttribute="height" multiplier="1:1" id="L8s-Qh-d9U"/>
+                                                                <constraint firstAttribute="height" constant="100" id="fRj-PR-z5u"/>
+                                                                <constraint firstAttribute="width" constant="100" id="oPy-HF-ezv"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
@@ -145,17 +148,18 @@
                                                         <constraint firstItem="ASK-es-wxV" firstAttribute="leading" secondItem="zEG-mC-hf5" secondAttribute="leading" id="489-hQ-V0B"/>
                                                         <constraint firstAttribute="height" constant="175" id="6ws-k3-Mi1"/>
                                                         <constraint firstItem="aOb-gm-Zn8" firstAttribute="width" secondItem="zEG-mC-hf5" secondAttribute="width" id="ErY-Eq-Mlt"/>
-                                                        <constraint firstAttribute="bottom" secondItem="zsz-bO-FNo" secondAttribute="bottom" constant="20" id="GEU-4C-QBv"/>
                                                         <constraint firstItem="zEG-mC-hf5" firstAttribute="top" secondItem="aOb-gm-Zn8" secondAttribute="bottom" constant="8" id="IEI-vo-AVN"/>
                                                         <constraint firstItem="zEG-mC-hf5" firstAttribute="leading" secondItem="aOb-gm-Zn8" secondAttribute="leading" id="M19-80-Tcd"/>
-                                                        <constraint firstItem="aOb-gm-Zn8" firstAttribute="leading" secondItem="y3Z-3O-KPs" secondAttribute="leading" constant="25" id="Mgk-3Q-v6T"/>
-                                                        <constraint firstAttribute="trailing" secondItem="zsz-bO-FNo" secondAttribute="trailing" constant="25" id="UHc-B4-ZOJ"/>
+                                                        <constraint firstItem="aOb-gm-Zn8" firstAttribute="leading" secondItem="y3Z-3O-KPs" secondAttribute="leading" constant="30" id="Mgk-3Q-v6T"/>
+                                                        <constraint firstAttribute="trailing" secondItem="zsz-bO-FNo" secondAttribute="trailing" constant="30" id="UHc-B4-ZOJ"/>
                                                         <constraint firstAttribute="bottom" secondItem="WEj-YT-fs0" secondAttribute="bottom" constant="25" id="bPH-ok-QUP"/>
                                                         <constraint firstItem="zEG-mC-hf5" firstAttribute="centerX" secondItem="aOb-gm-Zn8" secondAttribute="centerX" id="bjP-Sq-Q1y"/>
                                                         <constraint firstItem="aOb-gm-Zn8" firstAttribute="top" secondItem="y3Z-3O-KPs" secondAttribute="top" constant="25" id="cvz-YJ-hXc"/>
                                                         <constraint firstItem="ASK-es-wxV" firstAttribute="centerY" secondItem="y3Z-3O-KPs" secondAttribute="centerY" id="f8M-bC-6gU"/>
+                                                        <constraint firstItem="zsz-bO-FNo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zEG-mC-hf5" secondAttribute="trailing" constant="20" id="g1x-aF-FGd"/>
                                                         <constraint firstItem="zEG-mC-hf5" firstAttribute="width" secondItem="WEj-YT-fs0" secondAttribute="width" id="lFT-UZ-y9y"/>
                                                         <constraint firstItem="WEj-YT-fs0" firstAttribute="centerX" secondItem="zEG-mC-hf5" secondAttribute="centerX" id="sJF-rw-QDk"/>
+                                                        <constraint firstItem="zsz-bO-FNo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WEj-YT-fs0" secondAttribute="trailing" constant="20" id="yOh-D6-TFs"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>

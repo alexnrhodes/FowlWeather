@@ -35,9 +35,8 @@ class SearchBarViewController: UIViewController, UISearchBarDelegate {
             let blurEffect = UIBlurEffect(style: .dark)
             let blurEffectView = UIVisualEffectView(effect: blurEffect)
             //always fill the view
-            blurEffectView.frame = self.view.bounds
-            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-
+            blurEffectView.frame = self.view.frame
+            
             blurView.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
         } else {
             view.backgroundColor = .black

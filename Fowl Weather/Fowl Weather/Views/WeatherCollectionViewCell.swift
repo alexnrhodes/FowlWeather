@@ -32,13 +32,13 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
     @IBOutlet weak var rainPercentageLabel: UILabel!
     
     private func updateViews() {
-     
+        
         
         guard let forcastedWeatherDay = forcastedWeatherDay else {return}
         
         switch forcastedWeatherDay.weather.first {
         case WeatherType.clear.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "sun-transparent-png-images-free-download-Sun-PNG-Transparent-Image")
+            iconImageView.image = #imageLiteral(resourceName: "sun")
         case WeatherType.fewClouds.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
         case WeatherType.scatteredClouds.rawValue:
@@ -46,6 +46,8 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
         case WeatherType.brokenClouds.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
         case WeatherType.shower.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "rain")
+        case WeatherType.lightRain.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "rain")
         case WeatherType.rain.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "rainy")
@@ -56,7 +58,7 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
         case WeatherType.mist.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "rainy")
         default:
-            print(forcastedWeatherDay.weather.first)
+            print(forcastedWeatherDay.weather.first ?? "")
             iconImageView.image = #imageLiteral(resourceName: "clearSky")
         }
         

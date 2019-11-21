@@ -28,6 +28,7 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var tempHigh: UILabel!
     @IBOutlet weak var tempLow: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
     
     private func updateViews() {
         
@@ -37,7 +38,7 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
         
         switch forcastedWeatherDay.weather.first {
         case WeatherType.clear.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "day_clear")
+            iconImageView.image = #imageLiteral(resourceName: "clearSky")
         case WeatherType.fewClouds.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
         case WeatherType.scatteredClouds.rawValue:
@@ -45,17 +46,17 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
         case WeatherType.brokenClouds.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
         case WeatherType.shower.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "day_rain")
+            iconImageView.image = #imageLiteral(resourceName: "rain")
         case WeatherType.rain.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "day_rain")
+            iconImageView.image = #imageLiteral(resourceName: "rainy")
         case WeatherType.storm.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "day_snow_thunder")
+            iconImageView.image = #imageLiteral(resourceName: "storm")
         case WeatherType.snow.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "day_snow")
+            iconImageView.image = #imageLiteral(resourceName: "snow")
         case WeatherType.mist.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "day_rain")
+            iconImageView.image = #imageLiteral(resourceName: "rainy")
         default:
-            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+            iconImageView.image = #imageLiteral(resourceName: "clearSky")
         }
         
         let date = Date(timeIntervalSince1970: forcastedWeatherDay.date)

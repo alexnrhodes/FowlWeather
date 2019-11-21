@@ -11,12 +11,13 @@ import ScalingCarousel
 import SHSearchBar
 import CoreLocation
 
-enum WeatherType: String {
+enum WeatherType: String, CaseIterable {
     case clear = "clear sky"
     case fewClouds = "few clouds"
     case scatteredClouds = "scattered clouds"
     case brokenClouds = "broken clouds"
     case shower = "shower rain"
+    case lightRain = "light rain"
     case rain = "rain"
     case storm = "thunderstorm"
     case snow = "snow"
@@ -47,7 +48,7 @@ class ViewController: UIViewController {
     let jokeController = JokeController()
     
     // Object Properites
-    var currentWeather: CurrentWeather?
+    var currentWeather: CurrentWeather? 
     var fiveDayForecast: [ForcastedWeatherDay]?
     var joke: Joke?
     var searchTerm: String? {
@@ -71,6 +72,13 @@ class ViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, MMMM dd"
         
+        formatter.timeZone = TimeZone.current
+        return formatter
+    }
+    
+    var hourlyTime: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "H"
         formatter.timeZone = TimeZone.current
         return formatter
     }
@@ -116,12 +124,44 @@ class ViewController: UIViewController {
         sunsetLabel.text = "Sunset: \(sunriseDateFormatter.string(from: sunsetDate))"
     }
     
+//    private func setNightBackground() {
+//        if let date = Double(hourlyTime.string(from: Date())),
+//            let currentWeather = currentWeather {
+//
+//            let midnight = 0.0
+//            let sunriseDate = Date(timeIntervalSince1970: currentWeather.sunrise)
+//            let sunsetDate = Date(timeIntervalSince1970: currentWeather.sunset)
+//            guard let sunrise = Double(hourlyTime.string(from: sunriseDate)),
+//                let sunset = Double(hourlyTime.string(from: sunsetDate)) else {return}
+//
+//
+//            switch currentWeather.weather.first {
+//            case :
+//                if date > midnight && date <= sunrise {
+//
+//                }
+//            }
+//        }
+//    }
+    
     private func setBackground() {
-        guard let currentWeather = currentWeather else {return}
+        guard let currentWeather = currentWeather,
+            let date = Double(hourlyTime.string(from: Date())) else {return}
+        
+        let midnight = 0.0
+        let sunriseDate = Date(timeIntervalSince1970: currentWeather.sunrise)
+        let sunsetDate = Date(timeIntervalSince1970: currentWeather.sunset)
+        guard let sunrise = Double(hourlyTime.string(from: sunriseDate)),
+            let sunset = Double(hourlyTime.string(from: sunsetDate)) else {return}
+        
         
         switch currentWeather.weather.first {
         case WeatherType.clear.rawValue:
-            backgroundImageView.image = #imageLiteral(resourceName: "sunny")
+            if date > midnight && date <= sunrise {
+                backgroundImageView.image = #imageLiteral(resourceName: "clearNight")
+            } else {
+                backgroundImageView.image = #imageLiteral(resourceName: "sunny")
+            }
         case WeatherType.fewClouds.rawValue:
             backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
         case WeatherType.scatteredClouds.rawValue:
@@ -129,6 +169,8 @@ class ViewController: UIViewController {
         case WeatherType.brokenClouds.rawValue:
             backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
         case WeatherType.shower.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "sunnyShowers")
+        case WeatherType.lightRain.rawValue:
             backgroundImageView.image = #imageLiteral(resourceName: "sunnyShowers")
         case WeatherType.rain.rawValue:
             backgroundImageView.image = #imageLiteral(resourceName: "showers")

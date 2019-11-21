@@ -120,31 +120,10 @@ class ViewController: UIViewController {
         rainPercentageLabel.text = "\(currentWeather.cloudPercentage)%"
     }
     
-//    private func setNightBackground() {
-//        if let date = Double(hourlyTime.string(from: Date())),
-//            let currentWeather = currentWeather {
-//
-//            let midnight = 0.0
-//            let sunriseDate = Date(timeIntervalSince1970: currentWeather.sunrise)
-//            let sunsetDate = Date(timeIntervalSince1970: currentWeather.sunset)
-//            guard let sunrise = Double(hourlyTime.string(from: sunriseDate)),
-//                let sunset = Double(hourlyTime.string(from: sunsetDate)) else {return}
-//
-//
-//            switch currentWeather.weather.first {
-//            case :
-//                if date > midnight && date <= sunrise {
-//
-//                }
-//            }
-//        }
-//    }
-    
     private func setBackground() {
         guard let currentWeather = currentWeather,
             let date = Double(hourlyTime.string(from: Date())) else {return}
         
-        let midnight = 0.0
         let sunriseDate = Date(timeIntervalSince1970: currentWeather.sunrise)
         let sunsetDate = Date(timeIntervalSince1970: currentWeather.sunset)
         guard let sunrise = Double(hourlyTime.string(from: sunriseDate)),
@@ -152,34 +131,128 @@ class ViewController: UIViewController {
         
         
         switch currentWeather.weather.first {
+            
+        // clear
         case WeatherType.clear.rawValue:
-            if date > midnight && date <= sunrise {
+            
+            if date > sunset && date < sunrise {
                 backgroundImageView.image = #imageLiteral(resourceName: "clearNight")
             } else {
                 backgroundImageView.image = #imageLiteral(resourceName: "sunny")
             }
-        case WeatherType.fewClouds.rawValue:
-            backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
-        case WeatherType.scatteredClouds.rawValue:
-            backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
-        case WeatherType.brokenClouds.rawValue:
-            backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
-        case WeatherType.overcastClouds.rawValue:
-            backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
-        case WeatherType.shower.rawValue:
-            backgroundImageView.image = #imageLiteral(resourceName: "sunnyShowers")
-        case WeatherType.lightRain.rawValue:
-            backgroundImageView.image = #imageLiteral(resourceName: "sunnyShowers")
-        case WeatherType.rain.rawValue:
-            backgroundImageView.image = #imageLiteral(resourceName: "showers")
-        case WeatherType.storm.rawValue:
-            backgroundImageView.image = #imageLiteral(resourceName: "stormy")
-        case WeatherType.snow.rawValue:
-            backgroundImageView.image = #imageLiteral(resourceName: "snowy")
-        case WeatherType.mist.rawValue:
-            backgroundImageView.image = #imageLiteral(resourceName: "showers")
+            
+        // cloud
+        case WeatherType.fewClouds.rawValue,
+             WeatherType.scatteredClouds.rawValue,
+             WeatherType.overcastClouds.rawValue,
+             WeatherType.brokenClouds.rawValue,
+             WeatherType.overcastClouds.rawValue,
+             WeatherType.fewClouds2.rawValue,
+             WeatherType.scatteredClouds2.rawValue,
+             WeatherType.brokenClouds2.rawValue,
+             WeatherType.overcastClouds2.rawValue:
+            if date > sunset && date < sunrise {
+                backgroundImageView.image = #imageLiteral(resourceName: "cloudyNight")
+            } else {
+                backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
+            }
+            
+            
+        // rain
+        case WeatherType.shower.rawValue,
+             WeatherType.rain.rawValue,
+             WeatherType.lightRain.rawValue,
+             WeatherType.lightIntensityDrizzle.rawValue,
+             WeatherType.heavyIntensity.rawValue,
+             WeatherType.lightIntensity.rawValue,
+             WeatherType.drizzleRain.rawValue,
+             WeatherType.mist.rawValue:
+            if date > sunset && date < sunrise {
+                backgroundImageView.image = #imageLiteral(resourceName: "showers")
+            } else {
+                backgroundImageView.image = #imageLiteral(resourceName: "sunnyShowers")
+            }
+            
+            
+            
+        //storm
+        case WeatherType.storm.rawValue,
+             WeatherType.thunderstormLightRain.rawValue,
+             WeatherType.thunderstormRain.rawValue,
+             WeatherType.thunderstormHeavyRain.rawValue,
+             WeatherType.lightThunderstorm.rawValue,
+             WeatherType.heavyThunderstorm.rawValue,
+             WeatherType.raggedThunderstorm.rawValue,
+             WeatherType.thunderstormHeavyDrizzle.rawValue,
+             WeatherType.thunderstormLightDrizzle.rawValue,
+             WeatherType.thunderstormDrizzle.rawValue,
+             WeatherType.showeRainandHeavyDrizzle.rawValue,
+             WeatherType.showerDrizzle.rawValue,
+             WeatherType.moderateRain.rawValue,
+             WeatherType.heavyIntensityRain.rawValue,
+             WeatherType.veryHeavyRain.rawValue,
+             WeatherType.extremeRain.rawValue,
+             WeatherType.freezingRain.rawValue,
+             WeatherType.lightIntesityRain.rawValue,
+             WeatherType.heavyIntensityShowerRain.rawValue,
+             WeatherType.raggedShowerRain.rawValue:
+            if date > sunset && date < sunrise {
+                backgroundImageView.image = #imageLiteral(resourceName: "stormy")
+            } else {
+                backgroundImageView.image = #imageLiteral(resourceName: "stormy")
+            }
+            
+            
+        // snow
+        case WeatherType.snow.rawValue,
+             WeatherType.lightSnow.rawValue,
+             WeatherType.snowOther.rawValue,
+             WeatherType.heavySnow.rawValue,
+             WeatherType.sleet.rawValue,
+             WeatherType.lightShowerSleet.rawValue,
+             WeatherType.showerSleet.rawValue,
+             WeatherType.lightRainAndSnow.rawValue,
+             WeatherType.rainAndSnow.rawValue,
+             WeatherType.lightShowerRain.rawValue,
+             WeatherType.showerSnow.rawValue,
+             WeatherType.heavyShowerSnow.rawValue:
+            if date > sunset && date < sunrise {
+                backgroundImageView.image = #imageLiteral(resourceName: "cloudyNight")
+            } else {
+                backgroundImageView.image = #imageLiteral(resourceName: "snowy")
+            }
+            
+            
+        // other
+        case WeatherType.smoke.rawValue:
+            cloudyNightCloudyday(date: date, sunset: sunset, sunrise: sunrise)
+        case WeatherType.haze.rawValue:
+            cloudyNightCloudyday(date: date, sunset: sunset, sunrise: sunrise)
+        case WeatherType.sandAndDust.rawValue:
+            cloudyNightCloudyday(date: date, sunset: sunset, sunrise: sunrise)
+        case WeatherType.fog.rawValue:
+            cloudyNightCloudyday(date: date, sunset: sunset, sunrise: sunrise)
+        case WeatherType.sand.rawValue:
+            cloudyNightCloudyday(date: date, sunset: sunset, sunrise: sunrise)
+        case WeatherType.dust.rawValue:
+            cloudyNightCloudyday(date: date, sunset: sunset, sunrise: sunrise)
+        case WeatherType.volcanicAsh.rawValue:
+            cloudyNightCloudyday(date: date, sunset: sunset, sunrise: sunrise)
+        case WeatherType.squalls.rawValue:
+            cloudyNightCloudyday(date: date, sunset: sunset, sunrise: sunrise)
+        case WeatherType.tornado.rawValue:
+            cloudyNightCloudyday(date: date, sunset: sunset, sunrise: sunrise)
         default:
+            NSLog("You are missing an enum case: \(String(describing: currentWeather.weather.first))")
             break
+        }
+    }
+    
+    private func cloudyNightCloudyday(date: Double, sunset: Double, sunrise: Double) {
+        if date > sunset && date < sunrise {
+            backgroundImageView.image = #imageLiteral(resourceName: "cloudyNight")
+        } else {
+            backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
         }
     }
     
@@ -230,3 +303,4 @@ extension ScalingCarouselFlowDelegate: UICollectionViewDelegateFlowLayout {
         return 0
     }
 }
+

@@ -110,6 +110,7 @@ extension ViewController {
             self.currentWeather = self.weatherController.currentWeather
             self.fiveDayForecast = self.weatherController.fiveDayForcast
             self.joke = self.jokeController.joke
+            self.locationManger.stopUpdatingLocation()
             self.updateViews()
             self.carouselCollectionView.reloadData()
         }

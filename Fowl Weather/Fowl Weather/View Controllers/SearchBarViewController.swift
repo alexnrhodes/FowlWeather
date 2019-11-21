@@ -25,7 +25,7 @@ class SearchBarViewController: UIViewController, UISearchBarDelegate {
         
 //        NSLayoutConstraint(item: blurView!, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 1).isActive = true
         
-        searchBar.placeholder = "Search"
+        searchBar.placeholder = "Search by city or zip"
         searchBar.layer.cornerRadius = 10
         searchBarView.layer.cornerRadius = 10
        

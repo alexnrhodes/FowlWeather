@@ -1,0 +1,20 @@
+PODS:
+  - ScalingCarousel (3.0)
+  - SHSearchBar (1.7.0)
+
+DEPENDENCIES:
+  - ScalingCarousel
+  - SHSearchBar
+
+SPEC REPOS:
+  trunk:
+    - ScalingCarousel
+    - SHSearchBar
+
+SPEC CHECKSUMS:
+  ScalingCarousel: 7bf711d154b0c5c362c5dd4787ed7d13b489a4cb
+  SHSearchBar: 9fcc9daff8a3264386b975961de6c485f33439d4
+
+PODFILE CHECKSUM: 0b950b2ef370f0c455be2799414c08883fa9b01c
+
+COCOAPODS: 1.8.4

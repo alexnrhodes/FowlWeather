@@ -20,13 +20,15 @@ struct ForcastedWeatherDay: Codable {
     let temp: Double
     let tempMin: Double
     let tempMax: Double
-    let date: Date
+    let cloudPercentage: Int
+    let date: Double
 
     enum CodingKeys: String, CodingKey {
         case weather
         case temp = "main"
         case tempMin
         case tempMax
+        case cloudPercentage = "clouds"
         case date = "dt"
 
         enum WeatherDescriptionKeys: String, CodingKey {
@@ -38,6 +40,10 @@ struct ForcastedWeatherDay: Codable {
             case tempMin = "temp_min"
             case tempMax = "temp_max"
         }
+        
+        enum CloudKeys: String, CodingKey {
+            case percentage = "all"
+        }
     }
 
     init(from decoder: Decoder) throws {
@@ -45,7 +51,7 @@ struct ForcastedWeatherDay: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         // Top Level
-        let date = try container.decode(Date.self, forKey: .date)
+        let date = try container.decode(Double.self, forKey: .date)
         self.date = date
 
         // Weather Descriptions
@@ -66,5 +72,19 @@ struct ForcastedWeatherDay: Codable {
         self.temp = temp
         self.tempMin = tempMin
         self.tempMax = tempMax
+        
+        // Clouds
+        let cloudContainer = try container.nestedContainer(keyedBy: CodingKeys.CloudKeys.self, forKey: .cloudPercentage)
+        let cloudPercentage = try cloudContainer.decode(Int.self, forKey: .percentage)
+        self.cloudPercentage = cloudPercentage
+    }
+    
+    init(weather: [String], temp: Double, tempMin: Double, tempMax: Double, cloudPercentage: Int, date: Double) {
+        self.weather = weather
+        self.temp = temp
+        self.tempMin = tempMin
+        self.tempMax = tempMax
+        self.cloudPercentage = cloudPercentage
+        self.date = date
     }
 }

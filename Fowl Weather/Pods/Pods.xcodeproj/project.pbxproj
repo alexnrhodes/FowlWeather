@@ -1,0 +1,963 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		054709885B1FC263814AC694CEF53568 /* SHSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9B7F2A8BB278AA52D5D2095360833C /* SHSearchBar.swift */; };
+		05899D32BF9ADEFB4D4DC1FE57DC487C /* Foundation + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4D4B8B26AACA03D8BA2DEE0D697BF /* Foundation + Extensions.swift */; };
+		119536AD730A95F7084B30069A12DBB1 /* SHSearchBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CC66417623C4021E050C50632383D4ED /* SHSearchBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		13762BA1B8E6B4BEADFAE409DEDA2662 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		2831E67B86CC11CDE487FE08B182CEBC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		3936C89D20F377DC53759E1A17A35CFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		4523792DACC4EA4980109B23FEE45DE7 /* SHSearchBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F874AD08EBF7C85065CDB0C4595D4C9B /* SHSearchBar-dummy.m */; };
+		4652AC15CDB9DD1B1A6361FD93EDBA4D /* SHSearchBarTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8186D8EC7B23D710EC1EDFA57875733 /* SHSearchBarTextField.swift */; };
+		5FFEC7FE1BD877504FAEDCDE7B647BED /* Pods-Fowl Weather-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A764E914A85C0BEFDF37AB3F79BCCA2 /* Pods-Fowl Weather-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		701FD32E541A576B60F48C5AA3C4D6FA /* ScalingCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2EDB7E398DE4D6D92B445358BBCFAE /* ScalingCarouselView.swift */; };
+		70B286D128F14FA32830DB5E96922321 /* SHSearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F08FE272333DF2915697282E4A534AC /* SHSearchBarDelegate.swift */; };
+		826C4ED8DC13263D138803EE371DB11B /* SHSearchBar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1EE85C07C463DFC7B0DC680ADB11D6AE /* SHSearchBar.bundle */; };
+		853FDAE19636BBDFA505E3E88C45F473 /* ScalingCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500737BCA0252503C1D2CFDD8A05DEBD /* ScalingCarouselCell.swift */; };
+		904EFCAE255D3D02DA37BAE56CE94912 /* ScalingCarousel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ECFFC5D90AA0D154FE6AF75CA8F7A3 /* ScalingCarousel-dummy.m */; };
+		B969858BACA77B9D4D035D2CCF04D0F6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAF380B94C6AA18904BAC944B0FCD87D /* Localizable.strings */; };
+		BE33BA698200EBB354B41869C7DACA9F /* UIImage+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2F209FA91F91A69B3D60BCF342067F /* UIImage+Style.swift */; };
+		BE7971A59AAEC621AF96AEADBD698850 /* ScalingCarousel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DEC2DC2D89B2CBA407DA31661F2E8181 /* ScalingCarousel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EAF4E42303DC60CF879FA7EE430F78AB /* SHSearchBarConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E915AECF67D8C69048F29EDE338B3E1C /* SHSearchBarConfig.swift */; };
+		F64D9DB42893E7E765E4C8986D9E5416 /* Pods-Fowl Weather-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D828B1F6F415432B146134DB5B59C4A1 /* Pods-Fowl Weather-dummy.m */; };
+		FBA1EE1DA92E81090F16249F3878996F /* ScalingCarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90EE8C1D21ECB036F127824F4CB30BB /* ScalingCarouselLayout.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B4DD1BA4E2708A1FDF27648A77F9B6FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFEFFE9EA4BF597D5187692B44606E59;
+			remoteInfo = "SHSearchBar-SHSearchBar";
+		};
+		D8AC597A8577EBE71812DF3C6F7F4180 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFACD32F71A2A95ABC7CCA28CE5CBDE4;
+			remoteInfo = SHSearchBar;
+		};
+		E729A53C87EB3EF29A8CB3023EC991E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7050FECE58DF970CF84F4FE403CA67D9;
+			remoteInfo = ScalingCarousel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		09BC99E289AA2A85B2E8E737FDF0F7CE /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0A337EFBE4EE6B45F205AFA13312EC47 /* SHSearchBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SHSearchBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C1CBA5AF5491275FB4B779A5D657781 /* ScalingCarousel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScalingCarousel-prefix.pch"; sourceTree = "<group>"; };
+		1D00B9A1FEBEF339355010917052046E /* Pods-Fowl Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Fowl Weather.debug.xcconfig"; sourceTree = "<group>"; };
+		1EE85C07C463DFC7B0DC680ADB11D6AE /* SHSearchBar.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SHSearchBar.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		24E96286E41476A4E7F4D8742B9B16D7 /* ScalingCarousel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScalingCarousel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		35972EA256D15B0033AE16A58BE1E3C1 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		39ECFFC5D90AA0D154FE6AF75CA8F7A3 /* ScalingCarousel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ScalingCarousel-dummy.m"; sourceTree = "<group>"; };
+		4187F16867C16F8BB68CD2E4B51DD326 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4A764E914A85C0BEFDF37AB3F79BCCA2 /* Pods-Fowl Weather-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Fowl Weather-umbrella.h"; sourceTree = "<group>"; };
+		4CD2AFD6A46604217062605F17DDAEEC /* SHSearchBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SHSearchBar-prefix.pch"; sourceTree = "<group>"; };
+		500737BCA0252503C1D2CFDD8A05DEBD /* ScalingCarouselCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScalingCarouselCell.swift; path = ScalingCarousel/Classes/ScalingCarouselCell.swift; sourceTree = "<group>"; };
+		51CD8B76534C61BF9787F4C6FE16CE24 /* SHSearchBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SHSearchBar-Info.plist"; sourceTree = "<group>"; };
+		61D4CA871CAE3229F21372E866612F38 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		68C423A9FD576E75B0A3EB0905C761C9 /* ScalingCarousel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ScalingCarousel-Info.plist"; sourceTree = "<group>"; };
+		6EEF4819D60C1C513861B8CB7141A32F /* Pods-Fowl Weather-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Fowl Weather-acknowledgements.plist"; sourceTree = "<group>"; };
+		736CA313D9B9737E3DFB9606E5AA0EE4 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7A2F209FA91F91A69B3D60BCF342067F /* UIImage+Style.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Style.swift"; path = "Source/Classes/UIImage+Style.swift"; sourceTree = "<group>"; };
+		80B00610CCC5A982908DA1E1EDBB3537 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8D6143F47CA0B7885C0A1519DF6B0FD4 /* ScalingCarousel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ScalingCarousel.modulemap; sourceTree = "<group>"; };
+		8D77B71D375ADFC5F2DC17F8037086C6 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		98218D5EE00685D2A8C4ABD42357151E /* Pods-Fowl Weather.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Fowl Weather.modulemap"; sourceTree = "<group>"; };
+		9D1C48422B389B51C990E4EC06DEF771 /* ScalingCarousel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ScalingCarousel.xcconfig; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F08FE272333DF2915697282E4A534AC /* SHSearchBarDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHSearchBarDelegate.swift; path = Source/Classes/SHSearchBarDelegate.swift; sourceTree = "<group>"; };
+		BB568502AE0AF71D6D49D8AECFB21E91 /* ResourceBundle-SHSearchBar-SHSearchBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-SHSearchBar-SHSearchBar-Info.plist"; sourceTree = "<group>"; };
+		C38C0BD298049D046160FC86E57E3B47 /* Pods-Fowl Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Fowl Weather.release.xcconfig"; sourceTree = "<group>"; };
+		C760525C8FE21C59C0F4FD557B7B04BA /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CB2EDB7E398DE4D6D92B445358BBCFAE /* ScalingCarouselView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScalingCarouselView.swift; path = ScalingCarousel/Classes/ScalingCarouselView.swift; sourceTree = "<group>"; };
+		CC66417623C4021E050C50632383D4ED /* SHSearchBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SHSearchBar-umbrella.h"; sourceTree = "<group>"; };
+		D14ECAEF721449B87FF713593444107D /* SHSearchBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SHSearchBar.modulemap; sourceTree = "<group>"; };
+		D2F7BCA78F9C651438DB3107F2BC7B52 /* Pods-Fowl Weather-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Fowl Weather-Info.plist"; sourceTree = "<group>"; };
+		D828B1F6F415432B146134DB5B59C4A1 /* Pods-Fowl Weather-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Fowl Weather-dummy.m"; sourceTree = "<group>"; };
+		D90EE8C1D21ECB036F127824F4CB30BB /* ScalingCarouselLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScalingCarouselLayout.swift; path = ScalingCarousel/Classes/ScalingCarouselLayout.swift; sourceTree = "<group>"; };
+		D9D16317255CDFA11AFD6CC60284C8EC /* Pods-Fowl Weather-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Fowl Weather-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DE9B7F2A8BB278AA52D5D2095360833C /* SHSearchBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHSearchBar.swift; path = Source/Classes/SHSearchBar.swift; sourceTree = "<group>"; };
+		DEC2DC2D89B2CBA407DA31661F2E8181 /* ScalingCarousel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScalingCarousel-umbrella.h"; sourceTree = "<group>"; };
+		E63A3A8CC04DA30CB20A7D639346F881 /* Pods-Fowl Weather-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Fowl Weather-frameworks.sh"; sourceTree = "<group>"; };
+		E915AECF67D8C69048F29EDE338B3E1C /* SHSearchBarConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHSearchBarConfig.swift; path = Source/Classes/SHSearchBarConfig.swift; sourceTree = "<group>"; };
+		EDA4D4B8B26AACA03D8BA2DEE0D697BF /* Foundation + Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Foundation + Extensions.swift"; path = "Source/Classes/Foundation + Extensions.swift"; sourceTree = "<group>"; };
+		EF6ECAE2CFBF38F5BB93183071C7F09C /* Pods_Fowl_Weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fowl_Weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8186D8EC7B23D710EC1EDFA57875733 /* SHSearchBarTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHSearchBarTextField.swift; path = Source/Classes/SHSearchBarTextField.swift; sourceTree = "<group>"; };
+		F874AD08EBF7C85065CDB0C4595D4C9B /* SHSearchBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SHSearchBar-dummy.m"; sourceTree = "<group>"; };
+		FD2A57CDE30D626409F539968455FF66 /* SHSearchBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SHSearchBar.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2169D06781CCFDC27624B4965DEE9CE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56B18683E9547E8D1D6BF6A977B4FDDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2831E67B86CC11CDE487FE08B182CEBC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7400D95DF6684290B742C698EA9DF5FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13762BA1B8E6B4BEADFAE409DEDA2662 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3E30C8FA52EBA62FDB46E8DE16E2311 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3936C89D20F377DC53759E1A17A35CFC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00FA4A929C2DCB0BFAB407E11471351B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF6ECAE2CFBF38F5BB93183071C7F09C /* Pods_Fowl_Weather.framework */,
+				24E96286E41476A4E7F4D8742B9B16D7 /* ScalingCarousel.framework */,
+				1EE85C07C463DFC7B0DC680ADB11D6AE /* SHSearchBar.bundle */,
+				0A337EFBE4EE6B45F205AFA13312EC47 /* SHSearchBar.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27C3F1CAD4D4F55B924175729D510D2D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BB568502AE0AF71D6D49D8AECFB21E91 /* ResourceBundle-SHSearchBar-SHSearchBar-Info.plist */,
+				D14ECAEF721449B87FF713593444107D /* SHSearchBar.modulemap */,
+				FD2A57CDE30D626409F539968455FF66 /* SHSearchBar.xcconfig */,
+				F874AD08EBF7C85065CDB0C4595D4C9B /* SHSearchBar-dummy.m */,
+				51CD8B76534C61BF9787F4C6FE16CE24 /* SHSearchBar-Info.plist */,
+				4CD2AFD6A46604217062605F17DDAEEC /* SHSearchBar-prefix.pch */,
+				CC66417623C4021E050C50632383D4ED /* SHSearchBar-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SHSearchBar";
+			sourceTree = "<group>";
+		};
+		4A1FD220B074433CE5217B663FC4CE41 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75857403287B583AE756484EE26E00A1 /* ScalingCarousel */,
+				DC95800C2BF96646E69611BA06FF89F9 /* SHSearchBar */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		75857403287B583AE756484EE26E00A1 /* ScalingCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				500737BCA0252503C1D2CFDD8A05DEBD /* ScalingCarouselCell.swift */,
+				D90EE8C1D21ECB036F127824F4CB30BB /* ScalingCarouselLayout.swift */,
+				CB2EDB7E398DE4D6D92B445358BBCFAE /* ScalingCarouselView.swift */,
+				F9FDC0C60AA7C2A3CD7AF1420CAB8018 /* Support Files */,
+			);
+			path = ScalingCarousel;
+			sourceTree = "<group>";
+		};
+		7B64003742936789DDC55323EDDF8F9A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EAD086523AFBB8D115E3344719E7FFF3 /* Pods-Fowl Weather */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C2C5EB634CA2BC137853B4D7B8659F38 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AAF380B94C6AA18904BAC944B0FCD87D /* Localizable.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				4A1FD220B074433CE5217B663FC4CE41 /* Pods */,
+				00FA4A929C2DCB0BFAB407E11471351B /* Products */,
+				7B64003742936789DDC55323EDDF8F9A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC95800C2BF96646E69611BA06FF89F9 /* SHSearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				EDA4D4B8B26AACA03D8BA2DEE0D697BF /* Foundation + Extensions.swift */,
+				DE9B7F2A8BB278AA52D5D2095360833C /* SHSearchBar.swift */,
+				E915AECF67D8C69048F29EDE338B3E1C /* SHSearchBarConfig.swift */,
+				9F08FE272333DF2915697282E4A534AC /* SHSearchBarDelegate.swift */,
+				F8186D8EC7B23D710EC1EDFA57875733 /* SHSearchBarTextField.swift */,
+				7A2F209FA91F91A69B3D60BCF342067F /* UIImage+Style.swift */,
+				C2C5EB634CA2BC137853B4D7B8659F38 /* Resources */,
+				27C3F1CAD4D4F55B924175729D510D2D /* Support Files */,
+			);
+			path = SHSearchBar;
+			sourceTree = "<group>";
+		};
+		EAD086523AFBB8D115E3344719E7FFF3 /* Pods-Fowl Weather */ = {
+			isa = PBXGroup;
+			children = (
+				98218D5EE00685D2A8C4ABD42357151E /* Pods-Fowl Weather.modulemap */,
+				D9D16317255CDFA11AFD6CC60284C8EC /* Pods-Fowl Weather-acknowledgements.markdown */,
+				6EEF4819D60C1C513861B8CB7141A32F /* Pods-Fowl Weather-acknowledgements.plist */,
+				D828B1F6F415432B146134DB5B59C4A1 /* Pods-Fowl Weather-dummy.m */,
+				E63A3A8CC04DA30CB20A7D639346F881 /* Pods-Fowl Weather-frameworks.sh */,
+				D2F7BCA78F9C651438DB3107F2BC7B52 /* Pods-Fowl Weather-Info.plist */,
+				4A764E914A85C0BEFDF37AB3F79BCCA2 /* Pods-Fowl Weather-umbrella.h */,
+				1D00B9A1FEBEF339355010917052046E /* Pods-Fowl Weather.debug.xcconfig */,
+				C38C0BD298049D046160FC86E57E3B47 /* Pods-Fowl Weather.release.xcconfig */,
+			);
+			name = "Pods-Fowl Weather";
+			path = "Target Support Files/Pods-Fowl Weather";
+			sourceTree = "<group>";
+		};
+		F9FDC0C60AA7C2A3CD7AF1420CAB8018 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8D6143F47CA0B7885C0A1519DF6B0FD4 /* ScalingCarousel.modulemap */,
+				9D1C48422B389B51C990E4EC06DEF771 /* ScalingCarousel.xcconfig */,
+				39ECFFC5D90AA0D154FE6AF75CA8F7A3 /* ScalingCarousel-dummy.m */,
+				68C423A9FD576E75B0A3EB0905C761C9 /* ScalingCarousel-Info.plist */,
+				1C1CBA5AF5491275FB4B779A5D657781 /* ScalingCarousel-prefix.pch */,
+				DEC2DC2D89B2CBA407DA31661F2E8181 /* ScalingCarousel-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ScalingCarousel";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3E4455540B0C53CA5013A83952D7CAE8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE7971A59AAEC621AF96AEADBD698850 /* ScalingCarousel-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5C5CF13596BDF38386C48A476B240FD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				119536AD730A95F7084B30069A12DBB1 /* SHSearchBar-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B825A76ABA5CE9FD050250B36395D3CF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FFEC7FE1BD877504FAEDCDE7B647BED /* Pods-Fowl Weather-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		52D5340D307770EEA4AD06CE7428A2B5 /* Pods-Fowl Weather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FC02FF644C96E2524DD83860452D57C /* Build configuration list for PBXNativeTarget "Pods-Fowl Weather" */;
+			buildPhases = (
+				B825A76ABA5CE9FD050250B36395D3CF /* Headers */,
+				A4668FB5232EFF3D3D399F20663F2D04 /* Sources */,
+				7400D95DF6684290B742C698EA9DF5FB /* Frameworks */,
+				EBFD117FB0AFE6BD536A5A4EF0EE8B09 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D61CB2C1E9E272350C6B4E27E99CAE5 /* PBXTargetDependency */,
+				94D2A7AF928A8CAEBE1C9C3DE21B3982 /* PBXTargetDependency */,
+			);
+			name = "Pods-Fowl Weather";
+			productName = "Pods-Fowl Weather";
+			productReference = EF6ECAE2CFBF38F5BB93183071C7F09C /* Pods_Fowl_Weather.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7050FECE58DF970CF84F4FE403CA67D9 /* ScalingCarousel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F8EFF8386604440E2C802707D7DE417 /* Build configuration list for PBXNativeTarget "ScalingCarousel" */;
+			buildPhases = (
+				3E4455540B0C53CA5013A83952D7CAE8 /* Headers */,
+				2CFD1C8707894C045A41052731E8B340 /* Sources */,
+				D3E30C8FA52EBA62FDB46E8DE16E2311 /* Frameworks */,
+				7A1FAB16849279EC59298D88CDADDD0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScalingCarousel;
+			productName = ScalingCarousel;
+			productReference = 24E96286E41476A4E7F4D8742B9B16D7 /* ScalingCarousel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BFEFFE9EA4BF597D5187692B44606E59 /* SHSearchBar-SHSearchBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0734C37A3BF80F66804FF6C8B3922B62 /* Build configuration list for PBXNativeTarget "SHSearchBar-SHSearchBar" */;
+			buildPhases = (
+				17E8ED7B1A60013912665E7DDC145405 /* Sources */,
+				2169D06781CCFDC27624B4965DEE9CE5 /* Frameworks */,
+				12946334E47B6581964BED6C63D28523 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SHSearchBar-SHSearchBar";
+			productName = "SHSearchBar-SHSearchBar";
+			productReference = 1EE85C07C463DFC7B0DC680ADB11D6AE /* SHSearchBar.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		EFACD32F71A2A95ABC7CCA28CE5CBDE4 /* SHSearchBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9EA72695A885E333DC7788145C2FDAF0 /* Build configuration list for PBXNativeTarget "SHSearchBar" */;
+			buildPhases = (
+				A5C5CF13596BDF38386C48A476B240FD /* Headers */,
+				0C2DF224B0EDF87B725B6E5EB768E526 /* Sources */,
+				56B18683E9547E8D1D6BF6A977B4FDDD /* Frameworks */,
+				222E53B03378EDB6B1CDDF71648F601C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8443BC158E592D4494FD34D460759682 /* PBXTargetDependency */,
+			);
+			name = SHSearchBar;
+			productName = SHSearchBar;
+			productReference = 0A337EFBE4EE6B45F205AFA13312EC47 /* SHSearchBar.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				de,
+				es,
+				fr,
+				it,
+				ja,
+				ru,
+				"zh-Hans",
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 00FA4A929C2DCB0BFAB407E11471351B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52D5340D307770EEA4AD06CE7428A2B5 /* Pods-Fowl Weather */,
+				7050FECE58DF970CF84F4FE403CA67D9 /* ScalingCarousel */,
+				EFACD32F71A2A95ABC7CCA28CE5CBDE4 /* SHSearchBar */,
+				BFEFFE9EA4BF597D5187692B44606E59 /* SHSearchBar-SHSearchBar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		12946334E47B6581964BED6C63D28523 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B969858BACA77B9D4D035D2CCF04D0F6 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		222E53B03378EDB6B1CDDF71648F601C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				826C4ED8DC13263D138803EE371DB11B /* SHSearchBar.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A1FAB16849279EC59298D88CDADDD0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBFD117FB0AFE6BD536A5A4EF0EE8B09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0C2DF224B0EDF87B725B6E5EB768E526 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05899D32BF9ADEFB4D4DC1FE57DC487C /* Foundation + Extensions.swift in Sources */,
+				4523792DACC4EA4980109B23FEE45DE7 /* SHSearchBar-dummy.m in Sources */,
+				054709885B1FC263814AC694CEF53568 /* SHSearchBar.swift in Sources */,
+				EAF4E42303DC60CF879FA7EE430F78AB /* SHSearchBarConfig.swift in Sources */,
+				70B286D128F14FA32830DB5E96922321 /* SHSearchBarDelegate.swift in Sources */,
+				4652AC15CDB9DD1B1A6361FD93EDBA4D /* SHSearchBarTextField.swift in Sources */,
+				BE33BA698200EBB354B41869C7DACA9F /* UIImage+Style.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17E8ED7B1A60013912665E7DDC145405 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CFD1C8707894C045A41052731E8B340 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				904EFCAE255D3D02DA37BAE56CE94912 /* ScalingCarousel-dummy.m in Sources */,
+				853FDAE19636BBDFA505E3E88C45F473 /* ScalingCarouselCell.swift in Sources */,
+				FBA1EE1DA92E81090F16249F3878996F /* ScalingCarouselLayout.swift in Sources */,
+				701FD32E541A576B60F48C5AA3C4D6FA /* ScalingCarouselView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4668FB5232EFF3D3D399F20663F2D04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F64D9DB42893E7E765E4C8986D9E5416 /* Pods-Fowl Weather-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5D61CB2C1E9E272350C6B4E27E99CAE5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SHSearchBar;
+			target = EFACD32F71A2A95ABC7CCA28CE5CBDE4 /* SHSearchBar */;
+			targetProxy = D8AC597A8577EBE71812DF3C6F7F4180 /* PBXContainerItemProxy */;
+		};
+		8443BC158E592D4494FD34D460759682 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SHSearchBar-SHSearchBar";
+			target = BFEFFE9EA4BF597D5187692B44606E59 /* SHSearchBar-SHSearchBar */;
+			targetProxy = B4DD1BA4E2708A1FDF27648A77F9B6FA /* PBXContainerItemProxy */;
+		};
+		94D2A7AF928A8CAEBE1C9C3DE21B3982 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ScalingCarousel;
+			target = 7050FECE58DF970CF84F4FE403CA67D9 /* ScalingCarousel */;
+			targetProxy = E729A53C87EB3EF29A8CB3023EC991E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AAF380B94C6AA18904BAC944B0FCD87D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35972EA256D15B0033AE16A58BE1E3C1 /* Localizable.strings */,
+				61D4CA871CAE3229F21372E866612F38 /* Localizable.strings */,
+				09BC99E289AA2A85B2E8E737FDF0F7CE /* Localizable.strings */,
+				4187F16867C16F8BB68CD2E4B51DD326 /* Localizable.strings */,
+				C760525C8FE21C59C0F4FD557B7B04BA /* Localizable.strings */,
+				80B00610CCC5A982908DA1E1EDBB3537 /* Localizable.strings */,
+				736CA313D9B9737E3DFB9606E5AA0EE4 /* Localizable.strings */,
+				8D77B71D375ADFC5F2DC17F8037086C6 /* Localizable.strings */,
+			);
+			name = Localizable.strings;
+			path = Source/Strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0EE7F2B1C63CBF8BE3D60A25308B5033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D1C48422B389B51C990E4EC06DEF771 /* ScalingCarousel.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ScalingCarousel/ScalingCarousel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ScalingCarousel/ScalingCarousel-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ScalingCarousel/ScalingCarousel.modulemap";
+				PRODUCT_MODULE_NAME = ScalingCarousel;
+				PRODUCT_NAME = ScalingCarousel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3A61784F71D7AA30325300740C9C9E84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C38C0BD298049D046160FC86E57E3B47 /* Pods-Fowl Weather.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Fowl Weather/Pods-Fowl Weather-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Fowl Weather/Pods-Fowl Weather.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7D787BCA0C6E473A044D968BE76076D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD2A57CDE30D626409F539968455FF66 /* SHSearchBar.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SHSearchBar";
+				IBSC_MODULE = SHSearchBar;
+				INFOPLIST_FILE = "Target Support Files/SHSearchBar/ResourceBundle-SHSearchBar-SHSearchBar-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = SHSearchBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		91D43BCEB16F006E6C23708682BD7C48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D1C48422B389B51C990E4EC06DEF771 /* ScalingCarousel.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ScalingCarousel/ScalingCarousel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ScalingCarousel/ScalingCarousel-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ScalingCarousel/ScalingCarousel.modulemap";
+				PRODUCT_MODULE_NAME = ScalingCarousel;
+				PRODUCT_NAME = ScalingCarousel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		BC189E1B6E0837999D9A314E14EB88E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD2A57CDE30D626409F539968455FF66 /* SHSearchBar.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SHSearchBar/SHSearchBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SHSearchBar/SHSearchBar-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SHSearchBar/SHSearchBar.modulemap";
+				PRODUCT_MODULE_NAME = SHSearchBar;
+				PRODUCT_NAME = SHSearchBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D4490814076891F5621D39FBF0FFE0DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D00B9A1FEBEF339355010917052046E /* Pods-Fowl Weather.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Fowl Weather/Pods-Fowl Weather-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Fowl Weather/Pods-Fowl Weather.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DDD216E2E76F4074EE804DC29B32ADCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD2A57CDE30D626409F539968455FF66 /* SHSearchBar.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SHSearchBar";
+				IBSC_MODULE = SHSearchBar;
+				INFOPLIST_FILE = "Target Support Files/SHSearchBar/ResourceBundle-SHSearchBar-SHSearchBar-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = SHSearchBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		ECB437504DF805BD96CAABF97400B526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		EF85253C0A54767BA98FBAEE86AFB78E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD2A57CDE30D626409F539968455FF66 /* SHSearchBar.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SHSearchBar/SHSearchBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SHSearchBar/SHSearchBar-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SHSearchBar/SHSearchBar.modulemap";
+				PRODUCT_MODULE_NAME = SHSearchBar;
+				PRODUCT_NAME = SHSearchBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0734C37A3BF80F66804FF6C8B3922B62 /* Build configuration list for PBXNativeTarget "SHSearchBar-SHSearchBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D787BCA0C6E473A044D968BE76076D6 /* Debug */,
+				DDD216E2E76F4074EE804DC29B32ADCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F8EFF8386604440E2C802707D7DE417 /* Build configuration list for PBXNativeTarget "ScalingCarousel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0EE7F2B1C63CBF8BE3D60A25308B5033 /* Debug */,
+				91D43BCEB16F006E6C23708682BD7C48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FC02FF644C96E2524DD83860452D57C /* Build configuration list for PBXNativeTarget "Pods-Fowl Weather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4490814076891F5621D39FBF0FFE0DC /* Debug */,
+				3A61784F71D7AA30325300740C9C9E84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */,
+				ECB437504DF805BD96CAABF97400B526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9EA72695A885E333DC7788145C2FDAF0 /* Build configuration list for PBXNativeTarget "SHSearchBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF85253C0A54767BA98FBAEE86AFB78E /* Debug */,
+				BC189E1B6E0837999D9A314E14EB88E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

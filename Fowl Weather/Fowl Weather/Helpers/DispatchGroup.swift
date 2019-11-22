@@ -11,4 +11,3 @@ import Foundation
 class Group {
     static let dispatchGroup: DispatchGroup = DispatchGroup()
 }
-

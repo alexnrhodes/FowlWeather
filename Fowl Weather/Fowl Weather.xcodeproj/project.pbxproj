@@ -198,6 +198,7 @@
 				322939EC23830ADD005B83F4 /* Frameworks */,
 				322939ED23830ADD005B83F4 /* Resources */,
 				38F6762783EF1EB421D33C21 /* [CP] Embed Pods Frameworks */,
+				32A448CD2387552F006EF007 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -255,6 +256,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		32A448CD2387552F006EF007 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		38F6762783EF1EB421D33C21 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -269,7 +288,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fowl Weather/Pods-Fowl Weather-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fowl Weather/Pods-Fowl Weather-frameworks.sh\"\n\n";
 			showEnvVarsInLog = 0;
 		};
 		D5B7E9B65FE892A8F9AA2802 /* [CP] Check Pods Manifest.lock */ = {

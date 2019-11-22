@@ -19,7 +19,7 @@ class WeatherController {
     var fiveDayForcast: [ForcastedWeatherDay]?
     var weatherDays: [ForcastedWeatherDay] = []
     
-    //MARK: - Fetch Current By User Location
+    // MARK: - Fetch Current By User Location
     
     func fetchWeatherByLocation(location: CLLocation, completion: @escaping (CurrentWeather?, Error?) -> Void ) {
          
@@ -48,7 +48,7 @@ class WeatherController {
                  return
              }
              
-             do{
+             do {
                  let weatherDay = try JSONDecoder().decode(CurrentWeather.self, from: data)
                  self.currentWeather = weatherDay
                  completion(self.currentWeather, nil)
@@ -59,7 +59,7 @@ class WeatherController {
          }.resume()
      }
 
-    //MARK: - Fetch 5-Day Weather Forcast By Location
+    // MARK: - Fetch 5-Day Weather Forcast By Location
     
     func fetchFiveDayByLocation(location: CLLocation, completion: @escaping ([ForcastedWeatherDay]?, Error?) -> Void ) {
         var url = baseURL.appendingPathComponent("forecast")
@@ -90,7 +90,7 @@ class WeatherController {
                 return
             }
 
-            do{
+            do {
                 let weatherList = try JSONDecoder().decode(FiveDayForcast.self, from: data)
                 self.weatherDays = weatherList.list
                 self.fiveDayForcast = self.cleanFiveDayForecast(daysToClean: self.weatherDays)
@@ -102,7 +102,7 @@ class WeatherController {
         }.resume()
     }
     
-    //MARK: - Five Day Forcast Cleaner Functions
+    // MARK: - Five Day Forcast Cleaner Functions
     
     private func cleanFiveDayForecast(daysToClean: [ForcastedWeatherDay]) -> [ForcastedWeatherDay] {
         

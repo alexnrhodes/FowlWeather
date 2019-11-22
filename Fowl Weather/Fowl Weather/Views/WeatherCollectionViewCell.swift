@@ -32,40 +32,96 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
     @IBOutlet weak var rainPercentageLabel: UILabel!
     
     private func updateViews() {
-        
-        
+    
         guard let forcastedWeatherDay = forcastedWeatherDay else {return}
         
         switch forcastedWeatherDay.weather.first {
+        // clear
         case WeatherType.clear.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "sun")
-        case WeatherType.fewClouds.rawValue:
+            
+        // cloud
+        case WeatherType.fewClouds.rawValue,
+             WeatherType.scatteredClouds.rawValue,
+             WeatherType.overcastClouds.rawValue,
+             WeatherType.brokenClouds.rawValue,
+             WeatherType.overcastClouds.rawValue,
+             WeatherType.fewClouds2.rawValue,
+             WeatherType.scatteredClouds2.rawValue,
+             WeatherType.brokenClouds2.rawValue,
+             WeatherType.overcastClouds2.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
-        case WeatherType.scatteredClouds.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
-        case WeatherType.overcastClouds.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
-        case WeatherType.brokenClouds.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
-        case WeatherType.overcastClouds.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
-        case WeatherType.shower.rawValue:
+            
+        // rain
+        case WeatherType.shower.rawValue,
+             WeatherType.rain.rawValue,
+             WeatherType.lightRain.rawValue,
+             WeatherType.lightIntensityDrizzle.rawValue,
+             WeatherType.heavyIntensity.rawValue,
+             WeatherType.lightIntensity.rawValue,
+             WeatherType.drizzleRain.rawValue,
+             WeatherType.mist.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "rain")
-        case WeatherType.lightRain.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "rain")
-        case WeatherType.rain.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "rainy")
-        case WeatherType.lightRain.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "rain")
-        case WeatherType.storm.rawValue:
+            
+        //storm
+        case WeatherType.storm.rawValue,
+             WeatherType.thunderstormLightRain.rawValue,
+             WeatherType.thunderstormRain.rawValue,
+             WeatherType.thunderstormHeavyRain.rawValue,
+             WeatherType.lightThunderstorm.rawValue,
+             WeatherType.heavyThunderstorm.rawValue,
+             WeatherType.raggedThunderstorm.rawValue,
+             WeatherType.thunderstormHeavyDrizzle.rawValue,
+             WeatherType.thunderstormLightDrizzle.rawValue,
+             WeatherType.thunderstormDrizzle.rawValue,
+             WeatherType.showeRainandHeavyDrizzle.rawValue,
+             WeatherType.showerDrizzle.rawValue,
+             WeatherType.moderateRain.rawValue,
+             WeatherType.heavyIntensityRain.rawValue,
+             WeatherType.veryHeavyRain.rawValue,
+             WeatherType.extremeRain.rawValue,
+             WeatherType.freezingRain.rawValue,
+             WeatherType.lightIntesityRain.rawValue,
+             WeatherType.heavyIntensityShowerRain.rawValue,
+             WeatherType.raggedShowerRain.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "storm")
-        case WeatherType.snow.rawValue:
+            
+        // snow
+        case WeatherType.snow.rawValue,
+             WeatherType.lightSnow.rawValue,
+             WeatherType.snowOther.rawValue,
+             WeatherType.heavySnow.rawValue,
+             WeatherType.sleet.rawValue,
+             WeatherType.lightShowerSleet.rawValue,
+             WeatherType.showerSleet.rawValue,
+             WeatherType.lightRainAndSnow.rawValue,
+             WeatherType.rainAndSnow.rawValue,
+             WeatherType.lightShowerRain.rawValue,
+             WeatherType.showerSnow.rawValue,
+             WeatherType.heavyShowerSnow.rawValue:
             iconImageView.image = #imageLiteral(resourceName: "snow")
-        case WeatherType.mist.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "rainy")
+            
+        // other
+        case WeatherType.smoke.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+        case WeatherType.haze.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+        case WeatherType.sandAndDust.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+        case WeatherType.fog.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+        case WeatherType.sand.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+        case WeatherType.dust.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+        case WeatherType.volcanicAsh.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+        case WeatherType.squalls.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+        case WeatherType.tornado.rawValue:
+            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
         default:
-            print(forcastedWeatherDay.weather.first ?? "")
-            iconImageView.image = #imageLiteral(resourceName: "clearSky")
+            NSLog("You are missing an enum case in cell: \(String(describing: forcastedWeatherDay.weather.first))")
         }
         
         let date = Date(timeIntervalSince1970: forcastedWeatherDay.date)

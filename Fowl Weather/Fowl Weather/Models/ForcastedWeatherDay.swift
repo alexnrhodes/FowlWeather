@@ -8,8 +8,7 @@
 
 import Foundation
 
-import Foundation
-
+//swiftlint:disable nesting
 struct FiveDayForcast: Codable {
     let list: [ForcastedWeatherDay]
 }

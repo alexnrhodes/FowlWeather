@@ -65,7 +65,7 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
             iconImageView.image = #imageLiteral(resourceName: "rainy")
         default:
             print(forcastedWeatherDay.weather.first ?? "")
-            iconImageView.image = #imageLiteral(resourceName: "clearSky")
+            iconImageView.image = #imageLiteral(resourceName: "rain")
         }
         
         let date = Date(timeIntervalSince1970: forcastedWeatherDay.date)

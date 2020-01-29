@@ -22,8 +22,11 @@ class DarkSkyWeatherController {
     
     func fetchWeatherByLocation(location: CLLocation, completion: @escaping (DarkSkyWeather?, Error?) -> Void ) {
             
-        let url = baseURL.appendingPathComponent("\(location.coordinate.latitude), \(location.coordinate.longitude)")
-            
+        var url = baseURL.appendingPathComponent("\(location.coordinate.latitude), \(location.coordinate.longitude)")
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
+        let excludeQueryItem = URLQueryItem(name: "exclude", value: "minutely, alerts, flags")
+        components.queryItems = [excludeQueryItem]
+        url = components.url!
             Group.dispatchGroup.enter()
             URLSession.shared.dataTask(with: url) { (data, _, error) in
                 if let error = error {

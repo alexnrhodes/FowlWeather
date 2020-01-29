@@ -22,6 +22,7 @@ struct DarkSkyWeather: Codable {
         
         enum CurrentWeatherKeys: String, CodingKey {
             case summary
+            case weatherDescription = "icon"
             case precipProbability
             case temperature
             case feelsLikeTemp = "apparentTemperature"
@@ -37,6 +38,7 @@ struct DarkSkyWeather: Codable {
             enum DayKeys: String, CodingKey {
                 case time
                 case summary
+                case weatherDescription = "icon"
                 case sunriseTime
                 case sunsetTime
                 case precipIntensityMax
@@ -66,6 +68,7 @@ struct DarkSkyWeather: Codable {
         // Current Weather
         let currentWeatherContainer = try container.nestedContainer(keyedBy: CodingKeys.CurrentWeatherKeys.self, forKey: .currently)
         let summary                 = try currentWeatherContainer.decode(String.self, forKey: .summary)
+        let weatherDescription      = try currentWeatherContainer.decode(String.self, forKey: .weatherDescription)
         let precipProbability       = try currentWeatherContainer.decode(Double.self, forKey: .precipProbability)
         let currentTemp             = try currentWeatherContainer.decode(Double.self, forKey: .temperature)
         let feelsLikeTemp           = try currentWeatherContainer.decode(Double.self, forKey: .feelsLikeTemp)
@@ -73,7 +76,7 @@ struct DarkSkyWeather: Codable {
         let windSpeed               = try currentWeatherContainer.decode(Double.self, forKey: .windSpeed)
         let windBearing             = try currentWeatherContainer.decode(Int.self, forKey: .windBearing)
         
-        let currentWeather = DarkSkyCurrentWeather(summary: summary, precipProbability: precipProbability, temprature: currentTemp, feelsLikeTemp: feelsLikeTemp, humidity: humidity, windSpeed: windSpeed, windBearing: windBearing)
+        let currentWeather = DarkSkyCurrentWeather(summary: summary, weatherDescription: weatherDescription, precipProbability: precipProbability, temprature: currentTemp, feelsLikeTemp: feelsLikeTemp, humidity: humidity, windSpeed: windSpeed, windBearing: windBearing)
         self.currently = currentWeather
         
         // Daily Weather
@@ -87,12 +90,13 @@ struct DarkSkyWeather: Codable {
             let dayContainer = try dayDataArray.nestedContainer(keyedBy: CodingKeys.DailyWeatherKeys.DayKeys.self)
             let time                   = try dayContainer.decode(Double.self, forKey: .time)
             let summary                = try dayContainer.decode(String.self, forKey: .summary)
+            let weatherDescription     = try dayContainer.decode(String.self, forKey: .weatherDescription)
             let sunriseTime            = try dayContainer.decode(Double.self, forKey: .sunriseTime)
             let sunsetTime             = try dayContainer.decode(Double.self, forKey: .sunsetTime)
-            let precipIntensityMax     = try dayContainer.decode(Double.self, forKey: .precipIntensityMax)
-            let precipIntensityMaxTime = try dayContainer.decode(Double.self, forKey: .precipIntensityMaxTime)
+            let precipIntensityMax     = try? dayContainer.decode(Double.self, forKey: .precipIntensityMax)
+            let precipIntensityMaxTime = try? dayContainer.decode(Double.self, forKey: .precipIntensityMaxTime)
             let precipProbability      = try dayContainer.decode(Double.self, forKey: .precipProbability)
-            let precipType             = try dayContainer.decode(String.self, forKey: .precipType)
+            let precipType             = try? dayContainer.decode(String.self, forKey: .precipType)
             let temperatureHigh        = try dayContainer.decode(Double.self, forKey: .temperatureHigh)
             let temperatureHighTime    = try dayContainer.decode(Double.self, forKey: .temperatureHighTime)
             let temperatureLow         = try dayContainer.decode(Double.self, forKey: .temperatureLow)
@@ -101,7 +105,7 @@ struct DarkSkyWeather: Codable {
             let windSpeed              = try dayContainer.decode(Double.self, forKey: .windSpeed)
             let windBearing            = try dayContainer.decode(Int.self, forKey: .windBearing)
             
-            let day = DarkSkyDayForcast(time: time, summary: summary, sunriseTime: sunriseTime, sunsetTime: sunsetTime, precipIntensityMax: precipIntensityMax, precipIntensityMaxTime: precipIntensityMaxTime, precipProbability: precipProbability, precipType: precipType, temperatureHigh: temperatureHigh, temperatureHighTime: temperatureHighTime, temperatureLow: temperatureLow, temperatureLowTime: temperatureLowTime, humidity: humidity, windSpeed: windSpeed, windBearing: windBearing)
+            let day = DarkSkyDayForcast(time: time, summary: summary, weatherDescription: weatherDescription, sunriseTime: sunriseTime, sunsetTime: sunsetTime, precipIntensityMax: precipIntensityMax, precipIntensityMaxTime: precipIntensityMaxTime, precipProbability: precipProbability, precipType: precipType, temperatureHigh: temperatureHigh, temperatureHighTime: temperatureHighTime, temperatureLow: temperatureLow, temperatureLowTime: temperatureLowTime, humidity: humidity, windSpeed: windSpeed, windBearing: windBearing)
             darkSkyWeatherDays.append(day)
         }
         let daily = Daily(summary: daySummary, data: darkSkyWeatherDays)
@@ -111,6 +115,7 @@ struct DarkSkyWeather: Codable {
 
 struct DarkSkyCurrentWeather: Codable {
     let summary: String
+    let weatherDescription: String
     let precipProbability: Double
     let temprature: Double
     let feelsLikeTemp: Double
@@ -127,12 +132,13 @@ struct Daily: Codable {
 struct DarkSkyDayForcast: Codable {
     let time: Double
     let summary: String
+    let weatherDescription: String
     let sunriseTime: Double
     let sunsetTime: Double
-    let precipIntensityMax: Double
-    let precipIntensityMaxTime: Double
+    let precipIntensityMax: Double?
+    let precipIntensityMaxTime: Double?
     let precipProbability: Double
-    let precipType: String
+    let precipType: String?
     let temperatureHigh: Double
     let temperatureHighTime: Double
     let temperatureLow: Double

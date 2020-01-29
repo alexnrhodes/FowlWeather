@@ -21,6 +21,7 @@
 		32293A1123830B8C005B83F4 /* JokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32293A1023830B8C005B83F4 /* JokeController.swift */; };
 		324E83C423E148770075617C /* DarkSkyWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E83C323E148770075617C /* DarkSkyWeatherModel.swift */; };
 		324E83C623E14CB70075617C /* DarkSkyWeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E83C523E14CB70075617C /* DarkSkyWeatherController.swift */; };
+		3291787323E20B080043FCF3 /* DarkSkyWeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3291787223E20B080043FCF3 /* DarkSkyWeatherType.swift */; };
 		38C869912383AD2D004428EA /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C869902383AD2D004428EA /* WeatherCollectionViewCell.swift */; };
 		38C86995238480CC004428EA /* DispatchGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C86994238480CC004428EA /* DispatchGroup.swift */; };
 		38C8699723849498004428EA /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C8699623849498004428EA /* SearchBarViewController.swift */; };
@@ -48,6 +49,7 @@
 		32293A1023830B8C005B83F4 /* JokeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeController.swift; sourceTree = "<group>"; };
 		324E83C323E148770075617C /* DarkSkyWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyWeatherModel.swift; sourceTree = "<group>"; };
 		324E83C523E14CB70075617C /* DarkSkyWeatherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyWeatherController.swift; sourceTree = "<group>"; };
+		3291787223E20B080043FCF3 /* DarkSkyWeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyWeatherType.swift; sourceTree = "<group>"; };
 		35F8CB3D28121A4ECE116A6C /* Pods-Fowl Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fowl Weather.release.xcconfig"; path = "Target Support Files/Pods-Fowl Weather/Pods-Fowl Weather.release.xcconfig"; sourceTree = "<group>"; };
 		38C869902383AD2D004428EA /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		38C869922384808A004428EA /* ForcastedWeatherDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForcastedWeatherDay.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				321DC7B7238602FB00F1AF69 /* ViewController+Extension+FetchHelpers.swift */,
 				321DC7B92386044800F1AF69 /* ViewController+Extension+HelperFunctions.swift */,
 				321DC7BB23871E2A00F1AF69 /* WeatherType.swift */,
+				3291787223E20B080043FCF3 /* DarkSkyWeatherType.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				32293A1123830B8C005B83F4 /* JokeController.swift in Sources */,
 				38C86995238480CC004428EA /* DispatchGroup.swift in Sources */,
 				321DC7BC23871E2A00F1AF69 /* WeatherType.swift in Sources */,
+				3291787323E20B080043FCF3 /* DarkSkyWeatherType.swift in Sources */,
 				322939F523830ADD005B83F4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

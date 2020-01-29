@@ -19,17 +19,17 @@ extension ViewController {
         
         guard let searchTerm = searchTerm else { return }
         
-        Group.dispatchGroup.notify(queue: .main) {
-            self.currentWeather = self.weatherController.currentWeather
-            if self.currentWeather == nil {
-                self.popAlertControllerWithMessage(message: "\(searchTerm) is an invalid entry. Please try again.", title: "Invalid Search Entry")
-                return
-            }
-            self.weekForecast = self.weatherController.weekForcast
-            self.joke = self.jokeController.joke
-            self.updateViews()
-            self.carouselCollectionView.reloadData()
-        }
+//        Group.dispatchGroup.notify(queue: .main) {
+//            self.currentWeather = self.weatherController.currentWeather
+//            if self.currentWeather == nil {
+//                self.popAlertControllerWithMessage(message: "\(searchTerm) is an invalid entry. Please try again.", title: "Invalid Search Entry")
+//                return
+//            }
+//            self.weekForecast = self.weatherController.weekForcast
+//            self.joke = self.jokeController.joke
+//            self.updateViews()
+//            self.carouselCollectionView.reloadData()
+//        }
     }
     
     func performFetchesByLocation(location: CLLocation) {

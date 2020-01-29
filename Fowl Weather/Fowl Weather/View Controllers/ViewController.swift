@@ -145,48 +145,34 @@ class ViewController: UIViewController {
 //    }
     
     private func setBackground() {
-        #warning("placeholder until conversion to darkSky")
-        backgroundImageView.image = #imageLiteral(resourceName: "clearNight")
-//        guard let currentWeather = currentWeather,
-//            let date = Double(hourlyTime.string(from: Date())) else {return}
-//        
-//        let midnight = 0.0
-//        //let sunriseDate = Date(timeIntervalSince1970: currentWeather.sunrise)
-//       // let sunsetDate = Date(timeIntervalSince1970: currentWeather.sunset)
-//        guard let sunrise = Double(hourlyTime.string(from: sunriseDate)),
-//            let sunset = Double(hourlyTime.string(from: sunsetDate)) else {return}
-//        
-//        
-//        switch currentWeather.weather.first {
-//        case WeatherType.clear.rawValue:
-//            if date > midnight && date <= sunrise {
-//                backgroundImageView.image = #imageLiteral(resourceName: "clearNight")
-//            } else {
-//                backgroundImageView.image = #imageLiteral(resourceName: "sunny")
-//            }
-//        case WeatherType.fewClouds.rawValue:
-//            backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
-//        case WeatherType.scatteredClouds.rawValue:
-//            backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
-//        case WeatherType.brokenClouds.rawValue:
-//            backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
-//        case WeatherType.overcastClouds.rawValue:
-//            backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
-//        case WeatherType.shower.rawValue:
-//            backgroundImageView.image = #imageLiteral(resourceName: "sunnyShowers")
-//        case WeatherType.lightRain.rawValue:
-//            backgroundImageView.image = #imageLiteral(resourceName: "sunnyShowers")
-//        case WeatherType.rain.rawValue:
-//            backgroundImageView.image = #imageLiteral(resourceName: "showers")
-//        case WeatherType.storm.rawValue:
-//            backgroundImageView.image = #imageLiteral(resourceName: "stormy")
-//        case WeatherType.snow.rawValue:
-//            backgroundImageView.image = #imageLiteral(resourceName: "snowy")
-//        case WeatherType.mist.rawValue:
-//            backgroundImageView.image = #imageLiteral(resourceName: "showers")
-//        default:
-//            break
-//        }
+        guard let currentWeather = currentWeather else {return}
+
+        switch currentWeather.weatherDescription {
+        case DarkSkyWeatherType.clearDay.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "sunny")
+        case DarkSkyWeatherType.clearNight.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "clearNight")
+        case DarkSkyWeatherType.cloudy.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
+        case DarkSkyWeatherType.partlyCloudyDay.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
+        case DarkSkyWeatherType.partlyCloudyNight.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
+        case DarkSkyWeatherType.fog.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "cloudy")
+        case DarkSkyWeatherType.wind.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "showers")
+        case DarkSkyWeatherType.rain.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "showers")
+        case DarkSkyWeatherType.thunderStorm.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "stormy")
+        case DarkSkyWeatherType.snow.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "snowy")
+        case DarkSkyWeatherType.sleet.rawValue:
+            backgroundImageView.image = #imageLiteral(resourceName: "showers")
+        default:
+            break
+        }
     }
     
     func setupLocationManager() {

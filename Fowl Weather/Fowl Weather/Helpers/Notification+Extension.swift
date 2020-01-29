@@ -10,4 +10,5 @@ import Foundation
 
 extension Notification.Name {
     static var searchTermChosen = Notification.Name("searchTermChosen")
+    static var readyToFetch = Notification.Name("ReadyToFetch")
 }

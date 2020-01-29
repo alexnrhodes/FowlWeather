@@ -17,7 +17,6 @@ class DarkSkyWeatherController {
     var fullWeather: DarkSkyWeather?
     var currentWeather: DarkSkyCurrentWeather?
     var weekForcast: [DarkSkyDayForcast]?
-    var weatherDays: [DarkSkyDayForcast] = []
     
     // MARK: - Fetch Weather by Location
     
@@ -44,7 +43,6 @@ class DarkSkyWeatherController {
                     self.fullWeather = weather
                     self.currentWeather = weather.currently
                     self.weekForcast = weather.daily.data
-                    self.weatherDays = weather.daily.data
                     
                     completion(self.fullWeather, nil)
                 } catch {

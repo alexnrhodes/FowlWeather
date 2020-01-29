@@ -71,7 +71,7 @@ struct DarkSkyWeather: Codable {
         let feelsLikeTemp           = try currentWeatherContainer.decode(Double.self, forKey: .feelsLikeTemp)
         let humidity                = try currentWeatherContainer.decode(Double.self, forKey: .humidity)
         let windSpeed               = try currentWeatherContainer.decode(Double.self, forKey: .windSpeed)
-        let windBearing             = try currentWeatherContainer.decode(Double.self, forKey: .windBearing)
+        let windBearing             = try currentWeatherContainer.decode(Int.self, forKey: .windBearing)
         
         let currentWeather = DarkSkyCurrentWeather(summary: summary, precipProbability: precipProbability, temprature: currentTemp, feelsLikeTemp: feelsLikeTemp, humidity: humidity, windSpeed: windSpeed, windBearing: windBearing)
         self.currently = currentWeather
@@ -116,7 +116,7 @@ struct DarkSkyCurrentWeather: Codable {
     let feelsLikeTemp: Double
     let humidity: Double
     let windSpeed: Double
-    let windBearing: Double
+    let windBearing: Int
 }
 
 struct Daily: Codable {

@@ -46,13 +46,36 @@ extension ViewController: CLLocationManagerDelegate {
             
             guard let placemark = placeMarks?.first,
                 let location = placemark.location else { return }
+            #warning("handle the switch from userLocation to searchLocation better")
             self.searchedLocation = location
+            self.userLocation = location
+        }
+    }
+    
+    func getAddressStringFromLatandLong(latitude: Double, longitude: Double) {
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
+            if let error = error {
+                NSLog("Error getting address from latitue and longitude:\(error)")
+                return
+            }
+            
+            guard let placemarks = placemarks  else { return }
+            var addressString: String = ""
+            if placemarks.count > 0 {
+                let placemarks = placemarks[0]
+
+                if placemarks.locality != nil {
+                    addressString = addressString + placemarks.locality!
+                }
+                self.locationString = addressString
+            }
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         userLocation = locations.last
-        performFetchByLocation(location: userLocation!)
+        performFetchesByLocation(location: userLocation!)
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

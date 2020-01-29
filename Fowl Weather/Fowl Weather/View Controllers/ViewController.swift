@@ -44,10 +44,11 @@ class ViewController: UIViewController {
             fetchCLLocationFromSearch(with: searchTerm ?? "Cupertino")
         }
     }
+    var locationString: String?
     
     // Location Manager
     let locationManger = CLLocationManager()
-    var userLocation: CLLocation?
+    var userLocation: CLLocation? 
     var geocoder = CLGeocoder()
     var searchedLocation: CLLocation? {
         didSet {
@@ -84,13 +85,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         carouselCollectionView.dataSource = self
         carouselCollectionView.delegate = self
-        observeSearchTerm()
+        addObservers()
         checkLocationServices()
     }
     
     // MARK: - IBActions & Methods
     
-    private func observeSearchTerm() {
+    private func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveSearchTerm(_:)), name: .searchTermChosen, object: nil)
     }
     
@@ -102,24 +103,25 @@ class ViewController: UIViewController {
     func updateViews() {
         guard let joke = joke,
             let currentWeather = currentWeather,
-            let weekForcast = weekForecast else {return}
+            let weekForcast = weekForecast,
+            let locationString = locationString else {return}
         setBackground()
         
         todaysDateLabel.text = todayDateFormatter.string(from: Date())
         dadJokeLabel.text = joke.joke
         #warning("update to accept dark sky")
-        cityLabel.text = "\(userLocation)"
+        cityLabel.text = locationString
         categoryLabel.text = currentWeather.summary
         tempLabel.text = "\(String(format: "%.0f", currentWeather.temprature))°"
-        tempHighLabel.text =  "\(String(format: "%.0f", weekForcast.first?.temperatureHigh ?? 0.0))°"
-        tempLowLabel.text = "\(String(format: "%.0f", weekForcast.first?.temperatureLow ?? 0.0))°"
-//        windSpeedLabel.text = "Wind speed: \(String(format: "%.0f", currentWeather.windSpeed)) MPH"
-//        windDirectionLabel.text = "Wind Direction: \(cardinalDirectionHandler(directionInDegrees: currentWeather.windDirection))"
-//        let sunriseDate = Date(timeIntervalSince1970: currentWeather.sunrise)
-//        sunriseLabel.text = "Sunrise: \(sunriseDateFormatter.string(from: sunriseDate))"
-//        let sunsetDate = Date(timeIntervalSince1970: currentWeather.sunset)
-//        sunsetLabel.text = "Sunset: \(sunriseDateFormatter.string(from: sunsetDate))"
-//        rainPercentageLabel.text = "\(currentWeather.cloudPercentage)%"
+        tempHighLabel.text =  "\(String(format: "%.0f", weekForcast[0].temperatureHigh))°"
+        tempLowLabel.text = "\(String(format: "%.0f", weekForcast[0].temperatureLow))°"
+        windSpeedLabel.text = "Wind speed: \(String(format: "%.0f", currentWeather.windSpeed)) MPH"
+        windDirectionLabel.text = "Wind Direction: \(cardinalDirectionHandler(directionInDegrees: currentWeather.windBearing))"
+        let sunriseDate = Date(timeIntervalSince1970: weekForcast[0].sunriseTime)
+        sunriseLabel.text = "Sunrise: \(sunriseDateFormatter.string(from: sunriseDate))"
+        let sunsetDate = Date(timeIntervalSince1970: weekForcast[0].sunsetTime)
+        sunsetLabel.text = "Sunset: \(sunriseDateFormatter.string(from: sunsetDate))"
+        rainPercentageLabel.text = "\(String(format: "%.0f", currentWeather.precipProbability))%"
     }
     
 //    private func setNightBackground() {
@@ -202,7 +204,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        guard let weekForcast = weekForecast else { return 0 }
+        return weekForcast.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

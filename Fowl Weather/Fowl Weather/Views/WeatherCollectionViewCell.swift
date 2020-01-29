@@ -11,7 +11,7 @@ import ScalingCarousel
 
 class WeatherCollectionViewCell: ScalingCarouselCell {
     
-    var forcastedWeatherDay: ForcastedWeatherDay? {
+    var weekDayWeather: DarkSkyDayForcast? {
         didSet {
             updateViews()
         }
@@ -34,46 +34,48 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
     private func updateViews() {
         
         
-        guard let forcastedWeatherDay = forcastedWeatherDay else {return}
+        guard let weekDayWeather = weekDayWeather else {return}
+        #warning("Added placeholder before parse JSON")
+        iconImageView.image = #imageLiteral(resourceName: "sun")
+//        switch forcastedWeatherDay.weather.first {
+//        case WeatherType.clear.rawValue:
+//            iconImageView.image = #imageLiteral(resourceName: "sun")
+//        case WeatherType.fewClouds.rawValue:
+//            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+//        case WeatherType.scatteredClouds.rawValue:
+//            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+//        case WeatherType.overcastClouds.rawValue:
+//            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+//        case WeatherType.brokenClouds.rawValue:
+//            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+//        case WeatherType.overcastClouds.rawValue:
+//            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
+//        case WeatherType.shower.rawValue:
+//            iconImageView.image = #imageLiteral(resourceName: "rain")
+//        case WeatherType.lightRain.rawValue:
+//            iconImageView.image = #imageLiteral(resourceName: "rain")
+//        case WeatherType.rain.rawValue:
+//            iconImageView.image = #imageLiteral(resourceName: "rainy")
+//        case WeatherType.lightRain.rawValue:
+//            iconImageView.image = #imageLiteral(resourceName: "rain")
+//        case WeatherType.storm.rawValue:
+//            iconImageView.image = #imageLiteral(resourceName: "storm")
+//        case WeatherType.snow.rawValue:
+//            iconImageView.image = #imageLiteral(resourceName: "snow")
+//        case WeatherType.mist.rawValue:
+//            iconImageView.image = #imageLiteral(resourceName: "rainy")
+//        default:
+//            print(forcastedWeatherDay.weather.first ?? "")
+//            iconImageView.image = #imageLiteral(resourceName: "rain")
+//        }
         
-        switch forcastedWeatherDay.weather.first {
-        case WeatherType.clear.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "sun")
-        case WeatherType.fewClouds.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
-        case WeatherType.scatteredClouds.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
-        case WeatherType.overcastClouds.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
-        case WeatherType.brokenClouds.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
-        case WeatherType.overcastClouds.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "cloudy-1")
-        case WeatherType.shower.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "rain")
-        case WeatherType.lightRain.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "rain")
-        case WeatherType.rain.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "rainy")
-        case WeatherType.lightRain.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "rain")
-        case WeatherType.storm.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "storm")
-        case WeatherType.snow.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "snow")
-        case WeatherType.mist.rawValue:
-            iconImageView.image = #imageLiteral(resourceName: "rainy")
-        default:
-            print(forcastedWeatherDay.weather.first ?? "")
-            iconImageView.image = #imageLiteral(resourceName: "rain")
-        }
-        
-        let date = Date(timeIntervalSince1970: forcastedWeatherDay.date)
+        let date = Date(timeIntervalSince1970: weekDayWeather.time)
         dayLabel.text = dateFormatter.string(from: date)
-        tempHigh.text = String(format: "%.0f", forcastedWeatherDay.tempMax)
-        tempLow.text = String(format: "%.0f", forcastedWeatherDay.tempMin)
-        rainPercentageLabel.text = "\(forcastedWeatherDay.cloudPercentage)%"
-        categoryLabel.text = forcastedWeatherDay.weather.first
+        tempHigh.text = String(format: "%.0f", weekDayWeather.temperatureHigh)
+        tempLow.text = String(format: "%.0f", weekDayWeather.temperatureLow)
+        let rainChance = weekDayWeather.precipProbability * 100
+        rainPercentageLabel.text = "\(rainChance)%"
+        categoryLabel.text = weekDayWeather.summary
         
     }
 }

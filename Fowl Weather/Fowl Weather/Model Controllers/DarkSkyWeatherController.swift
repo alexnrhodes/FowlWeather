@@ -14,11 +14,14 @@ class DarkSkyWeatherController {
     // MARK: - Properties
     
     private let baseURL = URL(string: "https://api.darksky.net/forecast/46e988848cda94c3cb2b1236e7b4e29e")!
-    private var currentWeather: DarkSkyCurrentWeather?
+    var fullWeather: DarkSkyWeather?
+    var currentWeather: DarkSkyCurrentWeather?
+    var weekForcast: [DarkSkyDayForcast]?
+    var weatherDays: [DarkSkyDayForcast] = []
     
     // MARK: - Fetch Weather by Location
     
-    func fetchWeatherByLocation(location: CLLocation, completion: @escaping (DarkSkyCurrentWeather?, Error?) -> Void ) {
+    func fetchWeatherByLocation(location: CLLocation, completion: @escaping (DarkSkyWeather?, Error?) -> Void ) {
             
         let url = baseURL.appendingPathComponent("\(location.coordinate.latitude), \(location.coordinate.longitude)")
             
@@ -37,9 +40,13 @@ class DarkSkyWeatherController {
                 }
                 
                 do{
-                    let currentWeather = try JSONDecoder().decode(DarkSkyCurrentWeather.self, from: data)
-                    self.currentWeather = currentWeather
-                    completion(self.currentWeather, nil)
+                    let weather = try JSONDecoder().decode(DarkSkyWeather.self, from: data)
+                    self.fullWeather = weather
+                    self.currentWeather = weather.currently
+                    self.weekForcast = weather.daily.data
+                    self.weatherDays = weather.daily.data
+                    
+                    completion(self.fullWeather, nil)
                 } catch {
                     NSLog("Unable to decode data into CurrentWeather object:\(error)")
                 }

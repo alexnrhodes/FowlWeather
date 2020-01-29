@@ -24,7 +24,7 @@ extension ViewController {
                 self.popAlertControllerWithMessage(message: "\(searchTerm) is an invalid entry. Please try again.", title: "Invalid Search Entry")
                 return
             }
-            self.fiveDayForecast = self.weatherController.fiveDayForcast
+            self.weekForecast = self.weatherController.weatherDays
             self.joke = self.jokeController.joke
             self.updateViews()
             self.carouselCollectionView.reloadData()
@@ -41,12 +41,6 @@ extension ViewController {
                 
             }
         }
-        weatherController.fetchFiveDayByLocation(location: location) { (_, error) in
-            if let error = error {
-                NSLog("Error fetching current forecast: \(error)")
-                return
-            }
-        }
         jokeController.fetchRandomJoke { (_, error) in
             if let error = error {
                 NSLog("Error fetching joke: \(error)")
@@ -56,7 +50,7 @@ extension ViewController {
         
         Group.dispatchGroup.notify(queue: .main) {
             self.currentWeather = self.weatherController.currentWeather
-            self.fiveDayForecast = self.weatherController.fiveDayForcast
+            self.weekForecast = self.weatherController.weatherDays
             self.joke = self.jokeController.joke
             self.locationManger.stopUpdatingLocation()
             self.updateViews()

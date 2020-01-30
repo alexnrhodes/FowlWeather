@@ -401,10 +401,10 @@
                                 <rect key="frame" x="0.0" y="-44" width="414" height="990"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3vE-eK-q9Q">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="990"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="946"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="V4D-iB-v7x">
-                                                <rect key="frame" x="0.0" y="45" width="414" height="945"/>
+                                                <rect key="frame" x="0.0" y="43" width="414" height="903"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FD7-TT-uLS">
                                                 <rect key="frame" x="175" y="56" width="65" height="34"/>
@@ -413,6 +413,9 @@
                                                     <constraint firstAttribute="height" constant="34" id="DLd-kj-8qN"/>
                                                 </constraints>
                                                 <state key="normal" image="down"/>
+                                                <connections>
+                                                    <action selector="dismissArrowTapped:" destination="Q2U-RD-KR7" eventType="touchUpInside" id="N93-YP-Sue"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="November 30th,  2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeB-ub-EGW">
                                                 <rect key="frame" x="148" y="97" width="159" height="18"/>
@@ -498,7 +501,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gO8-ZC-bf5">
-                                                <rect key="frame" x="20" y="601" width="200.5" height="240"/>
+                                                <rect key="frame" x="20" y="557" width="200.5" height="240"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="SLi-xw-OjW">
                                                         <rect key="frame" x="0.0" y="0.0" width="200.5" height="23"/>
@@ -683,7 +686,7 @@
                                             <constraint firstItem="V4D-iB-v7x" firstAttribute="height" secondItem="3vE-eK-q9Q" secondAttribute="height" multiplier="0.954545" id="kIR-J4-Bca"/>
                                             <constraint firstAttribute="trailing" secondItem="bKo-sI-Sgy" secondAttribute="trailing" constant="35.5" id="oKB-G8-zbX"/>
                                             <constraint firstItem="qeB-ub-EGW" firstAttribute="top" secondItem="FD7-TT-uLS" secondAttribute="bottom" constant="7" id="rdB-XM-Fxt"/>
-                                            <constraint firstItem="V4D-iB-v7x" firstAttribute="top" secondItem="3vE-eK-q9Q" secondAttribute="top" constant="45" id="xC5-Gc-qBF"/>
+                                            <constraint firstItem="V4D-iB-v7x" firstAttribute="top" secondItem="3vE-eK-q9Q" secondAttribute="top" constant="43" id="xC5-Gc-qBF"/>
                                             <constraint firstAttribute="bottom" secondItem="gO8-ZC-bf5" secondAttribute="bottom" constant="149" id="xwu-cE-si8"/>
                                             <constraint firstItem="FD7-TT-uLS" firstAttribute="leading" secondItem="3vE-eK-q9Q" secondAttribute="leading" constant="175" id="ycp-k5-2y4"/>
                                         </constraints>

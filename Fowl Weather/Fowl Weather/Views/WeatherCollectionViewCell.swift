@@ -19,12 +19,7 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
         }
     }
     
-    var dateFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE"
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        return formatter
-    }
+    let dateFormatter = DateFormatter()
     
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
@@ -66,7 +61,7 @@ class WeatherCollectionViewCell: ScalingCarouselCell {
         }
         
         let date = Date(timeIntervalSince1970: weekDayWeather.time)
-        dayLabel.text = dateFormatter.string(from: date)
+        dayLabel.text = dateFormatter.fullDayFormatter.string(from: date)
         tempHigh.text = String(format: "%.0f", weekDayWeather.temperatureHigh)
         tempLow.text = String(format: "%.0f", weekDayWeather.temperatureLow)
         let rainChance = weekDayWeather.precipProbability * 100

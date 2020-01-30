@@ -174,10 +174,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
         }
-        
-        
         return cell
-        
     }
 }
 

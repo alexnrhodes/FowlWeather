@@ -36,4 +36,11 @@ extension DateFormatter {
         formatter.timeZone = TimeZone.current
         return formatter
     }
+    
+    var fullDayFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE MMM d, yyyy"
+        formatter.timeZone = TimeZone.current
+        return formatter
+    }
 }

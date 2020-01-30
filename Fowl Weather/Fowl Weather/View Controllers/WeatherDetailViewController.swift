@@ -116,4 +116,9 @@ class WeatherDetailViewController: UIViewController {
             break
         }
     }
+    
+    @IBAction func dismissArrowTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

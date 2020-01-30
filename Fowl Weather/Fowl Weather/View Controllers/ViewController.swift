@@ -36,6 +36,7 @@ class ViewController: UIViewController {
     let jokeController = JokeController()
     
     // Object Properites
+    let dateFormatter = DateFormatter()
     var currentWeather: DarkSkyCurrentWeather?
     var weekForecast: [DarkSkyDayForcast]?
     var joke: Joke?
@@ -44,10 +45,10 @@ class ViewController: UIViewController {
             fetchCLLocationFromSearch(with: searchTerm ?? "Cupertino")
         }
     }
-    var locationString: String?
     
     // Location Manager
     let locationManger = CLLocationManager()
+    var locationString: String?
     var userLocation: CLLocation? 
     var geocoder = CLGeocoder()
     var searchedLocation: CLLocation? {
@@ -57,27 +58,7 @@ class ViewController: UIViewController {
     }
     
     // Date Formatters
-    var sunriseDateFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "h:mm a"
-        formatter.timeZone = TimeZone.current
-        return formatter
-    }
-    
-    var todayDateFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE, MMMM dd"
-        
-        formatter.timeZone = TimeZone.current
-        return formatter
-    }
-    
-    var hourlyTime: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "H"
-        formatter.timeZone = TimeZone.current
-        return formatter
-    }
+   
     
     // MARK: - View LifeCycle
     
@@ -107,42 +88,21 @@ class ViewController: UIViewController {
             let locationString = locationString else {return}
         setBackground()
         
-        todaysDateLabel.text = todayDateFormatter.string(from: Date())
-        dadJokeLabel.text = joke.joke
-        #warning("update to accept dark sky")
-        cityLabel.text = locationString
-        categoryLabel.text = currentWeather.summary
-        tempLabel.text = "\(String(format: "%.0f", currentWeather.temprature))°"
-        tempHighLabel.text =  "\(String(format: "%.0f", weekForcast[0].temperatureHigh))°"
-        tempLowLabel.text = "\(String(format: "%.0f", weekForcast[0].temperatureLow))°"
-        windSpeedLabel.text = "Wind speed: \(String(format: "%.0f", currentWeather.windSpeed)) MPH"
-        windDirectionLabel.text = "Wind Direction: \(cardinalDirectionHandler(directionInDegrees: currentWeather.windBearing))"
-        let sunriseDate = Date(timeIntervalSince1970: weekForcast[0].sunriseTime)
-        sunriseLabel.text = "Sunrise: \(sunriseDateFormatter.string(from: sunriseDate))"
-        let sunsetDate = Date(timeIntervalSince1970: weekForcast[0].sunsetTime)
-        sunsetLabel.text = "Sunset: \(sunriseDateFormatter.string(from: sunsetDate))"
+        todaysDateLabel.text     = dateFormatter.todayDateFormatter.string(from: Date())
+        dadJokeLabel.text        = joke.joke
+        cityLabel.text           = locationString
+        categoryLabel.text       = currentWeather.summary
+        tempLabel.text           = "\(String(format: "%.0f", currentWeather.temprature))°"
+        tempHighLabel.text       =  "\(String(format: "%.0f", weekForcast[0].temperatureHigh))°"
+        tempLowLabel.text        = "\(String(format: "%.0f", weekForcast[0].temperatureLow))°"
+        windSpeedLabel.text      = "Wind speed: \(String(format: "%.0f", currentWeather.windSpeed)) MPH"
+        windDirectionLabel.text  = "Wind Direction: \(CardinalDirectionHelper.fetchDirection(directionInDegrees: currentWeather.windBearing))"
+        let sunriseDate          = Date(timeIntervalSince1970: weekForcast[0].sunriseTime)
+        sunriseLabel.text        = "Sunrise: \(dateFormatter.sunriseDateFormatter.string(from: sunriseDate))"
+        let sunsetDate           = Date(timeIntervalSince1970: weekForcast[0].sunsetTime)
+        sunsetLabel.text         = "Sunset: \(dateFormatter.sunriseDateFormatter.string(from: sunsetDate))"
         rainPercentageLabel.text = "\(String(format: "%.0f", currentWeather.precipProbability))%"
     }
-    
-//    private func setNightBackground() {
-//        if let date = Double(hourlyTime.string(from: Date())),
-//            let currentWeather = currentWeather {
-//
-//            let midnight = 0.0
-//            let sunriseDate = Date(timeIntervalSince1970: currentWeather.sunrise)
-//            let sunsetDate = Date(timeIntervalSince1970: currentWeather.sunset)
-//            guard let sunrise = Double(hourlyTime.string(from: sunriseDate)),
-//                let sunset = Double(hourlyTime.string(from: sunsetDate)) else {return}
-//
-//
-//            switch currentWeather.weather.first {
-//            case :
-//                if date > midnight && date <= sunrise {
-//
-//                }
-//            }
-//        }
-//    }
     
     private func setBackground() {
         guard let currentWeather = currentWeather else {return}
@@ -178,6 +138,17 @@ class ViewController: UIViewController {
     func setupLocationManager() {
         locationManger.delegate = self
         locationManger.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetailSegue" {
+            guard let detailVC = segue.destination as? WeatherDetailViewController,
+                let indexPath = carouselCollectionView.indexPathsForSelectedItems?.first,
+                let weekForecast = weekForecast else { return }
+            let selectedDay = weekForecast[indexPath.item]
+            detailVC.weatherDay = selectedDay
+            
+        }
     }
 }
 

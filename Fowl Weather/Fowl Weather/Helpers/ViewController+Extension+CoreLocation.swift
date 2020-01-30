@@ -44,7 +44,8 @@ extension ViewController: CLLocationManagerDelegate {
                 return
             }
             
-            guard let placemark = placeMarks?.first,
+            guard let placemarks = placeMarks,
+                let placemark = placemarks.first,
                 let location = placemark.location else { return }
             #warning("handle the switch from userLocation to searchLocation better")
             self.searchedLocation = location
